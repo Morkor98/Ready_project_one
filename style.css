@@ -1,0 +1,105 @@
+/* Per mobile usiamo lo slider, per desktop invece usiamo grid*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 13px;
+    line-height: 1.38462;
+    font-weight: 400;
+    letter-spacing: -.005em;
+    font-family: "SF Pro Text","SF Pro Icons","Apple WebExp Icons Custom","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #1d1d1f;
+    font-style: normal;
+}
+header, footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+.slider_container {
+    width: 100vw; /*La singola dashboard sarà 1/3 dello slider*/
+    overflow: hidden;
+}
+.slider {
+    display: flex;
+    width: 300vw; /*dimensione dello slider*/
+    transition: transform 0.5s ease-in-out;
+}
+input[name="slider"] { /*per nascondere i 3 pallini sopra la dashboard*/
+    display: none;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    gap: 10px;
+}
+.button label {
+    width: 12px;
+    height: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.Dashboard {
+    width: 100vw; /*La singola dashboard occupa tutto lo spazio*/
+    flex-shrink: 0;
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.Dashboard:nth-child(1) {
+    color: black;
+    background-color: darkorange;
+}
+.Dashboard:nth-child(2) {
+    color: black;
+    background-color: mediumpurple;
+}
+.Dashboard:nth-child(3) {
+    color: black;
+    background-color: blue;
+}
+.button input[type="radio"]{
+    display:none;
+}
+.button label {
+    display: inline-block;
+    width:10px;
+    height:10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+.slider_container {
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+}
+/*Cambio di colore al cambio della dashboard*/
+#slide1:checked ~ .button label[for="slide1"],
+#slide2:checked ~ .button label[for="slide2"],
+#slide3:checked ~ .button label[for="slide3"] {
+    background-color: #333;
+}
+#slide1:checked ~ .slider_container > .slider {
+    transform: translateX(0vw);
+}
+#slide2:checked ~ .slider_container > .slider {
+    transform: translateX(-100vw);
+}
+#slide3:checked ~ .slider_container > .slider {
+    transform: translateX(-200vw);
+}
