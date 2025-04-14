@@ -23,7 +23,7 @@ header, footer {
     position: relative;
     width: 100vw; /*La singola dashboard occupa tutto lo spazio*/
     flex-shrink: 0;
-    height: 30vh;
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
