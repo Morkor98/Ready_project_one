@@ -4,7 +4,8 @@
     background-color: darkred;
     display: flex;
     flex-direction: column;
-    
+    justify-content: space-evenly;
+
 }
 
 .Dashboard_Mich>*{
@@ -16,13 +17,42 @@
     flex-direction: row;
     justify-content: space-evenly;
     margin: 0 1.5rem;
+}
+.Image-container {
+    cursor: pointer;
+}
+.Image-container > * {
+    transition: opacity 0.5s ease;
+}
+
+.Placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
 
 }
 
-.Paragraph-Mich {
-    font: italic 13px "Lucida Grande", "Times New Roman", "Comic Sans MS", serif;
+.Image-container img {
+    object-fit: cover;
+    max-height: 40vh;
+    width: auto;
     padding: 5px;
     margin: 5px;
+    border-radius: 50px 0 50px 0;
+}
+
+.Paragraph-Mich {
+    font: italic 13px "Georgia", "Times New Roman", "Garamond", serif;
+    padding: 5px;
+    margin: 5px;
+    text-align: justify;
 }
 
 .Cavallo-Pazzo{
