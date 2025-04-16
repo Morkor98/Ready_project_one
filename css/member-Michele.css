@@ -1,7 +1,7 @@
 /* Insert here the CSS for the section of the member "Michele" */
 @font-face {
     font-family: 'Lobster';
-    src: url('./fonts/Lobster-Regular.ttf') format('truetype');
+    src: url('../fonts/Lobster-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
