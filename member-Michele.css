@@ -1,11 +1,20 @@
 /* Insert here the CSS for the section of the member "Michele" */
+@font-face {
+    font-family: 'Lobster';
+    src: url('./fonts/Lobster-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
 .Dashboard_Mich {
-    color: black;
-    background-color: darkred;
+    color: #daa600;
+    background-color: #73022e;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
 
+#Mich-name{
+    font: bold 20px "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
 }
 
 .Dashboard_Mich>*{
@@ -27,16 +36,16 @@
 
 .Placeholder {
     position: absolute;
-    left: 23%;
-    top: 25%;
+    left: 20%;
+    top: 20%;
     font-size: 10rem;
     font-weight: bold;
+    font-family: "Lobster", cursive;
 }
 
 .hidden {
     opacity: 0;
     pointer-events: none;
-
 }
 
 .Image-container img {

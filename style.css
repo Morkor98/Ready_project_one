@@ -13,11 +13,18 @@ body {
     color: #1d1d1f;
     font-style: normal;
 }
+body>p {
+    margin: 1rem;
+}
 header, footer {
     background: #333;
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+footer {
+    bottom: 0;
 }
 .Dashboard_Frank, .Dashboard_Omar, .Dashboard_Mich {
     position: relative;
