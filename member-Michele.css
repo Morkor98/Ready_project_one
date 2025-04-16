@@ -1,5 +1,73 @@
 /* Insert here the CSS for the section of the member "Michele" */
+@font-face {
+    font-family: 'Lobster';
+    src: url('./fonts/Lobster-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
 .Dashboard_Mich {
-    color: black;
-    background-color: blue;
+    color: #daa600;
+    background-color: #73022e;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#Mich-name{
+    font: bold 20px "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
+}
+
+.Dashboard_Mich>*{
+    margin: 0.5rem;
+}
+
+.Second-Line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 1.5rem;
+}
+.Image-container {
+    cursor: pointer;
+}
+.Image-container > * {
+    transition: opacity 0.5s ease;
+}
+
+.Placeholder {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    font-size: 10rem;
+    font-weight: bold;
+    font-family: "Lobster", cursive;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.Image-container img {
+    object-fit: cover;
+    max-height: 40vh;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50px 0 50px 0;
+}
+
+.Paragraph-Mich {
+    font: italic 13px "Georgia", "Times New Roman", "Garamond", serif;
+    padding: 5px;
+    margin: 5px;
+    text-align: justify;
+}
+
+.Cavallo-Pazzo{
+    max-height: 40vh;
+    width: auto;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50px 0 50px 0;
 }
