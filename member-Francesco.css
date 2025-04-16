@@ -1,5 +1,15 @@
 /* Insert here the CSS for the section of the member "Francesco" */
 .Dashboard_Frank {
     color: black;
-    background-color: mediumpurple;
+    background-image: url("bkg-2.jpg");
+    background-position: center center;
+    background-size: cover;
+    border-radius: 15px ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+
+}
+.Dashboard_Frank:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }

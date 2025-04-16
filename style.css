@@ -19,7 +19,7 @@ body>p {
 header, footer {
     background: #333;
     color: white;
-    text-align: center;
+    /*text-align: center;*/
     padding: 15px;
 }
 
@@ -38,3 +38,29 @@ footer {
     font-weight: bold;
 }
 
+footer {
+    font-family: "SF Pro Text","SF Pro Icons","Apple WebExp Icons Custom","Helvetica Neue",Helvetica,Arial,sans-serif;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.darkModeButton{
+    text-align: left;
+    background: #333;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+}
+
+.moon{
+    position: relative;
+    width: 2vw;
+    height: 2vw;
+}
+
+footer>p{
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
