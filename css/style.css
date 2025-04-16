@@ -1,4 +1,3 @@
-/* Per mobile usiamo lo slider, per desktop invece usiamo grid*/
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +8,7 @@ body {
     line-height: 1.38462;
     font-weight: 400;
     letter-spacing: -.005em;
-    font-family: "SF Pro Text","SF Pro Icons","Apple WebExp Icons Custom","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "SF Pro Text","SF Pro Icons","Apple WebExp Icons Custom","Helvetica Neue","Helvetica","Arial",sans-serif;
     color: #1d1d1f;
     font-style: normal;
 }
