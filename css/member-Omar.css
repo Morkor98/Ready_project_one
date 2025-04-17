@@ -62,13 +62,12 @@ color: black;
 }
 /*Dashboard aperta*/
 .dashboard-expanded {
-    width: 80%;
-    height: 80%;
+    margin:0 10vw;
+    width: 80vw;
+    height: 80vh;
     z-index: 9999;
     transition: transform 0.4s ease, opacity 0.4s ease;
     background-color: darkgrey;
-    border-radius: 20px;
-    padding: 20px;
 }
 
 body.dashboard-opened #dashboardCarousel {
