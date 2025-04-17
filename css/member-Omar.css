@@ -142,16 +142,44 @@ body.dashboard-opened #dashboardCarousel {
         width: auto;
         color: black;
     }
-}
-.text-info {
-    font-size: 1rem;
-    align-content: center;
-    text-align: center;
+    .text-info {
+        font-size: 1rem;
+        align-content: center;
+        text-align: center;
+    }
+
 }
 
 /* Stili per tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
+    #h2{
+        position: absolute;
+        top: 5%;
+        transition: opacity 0.5s ease;
+        opacity: 1;
+    }
+    #h2.hidden {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+    .image {
+        position: absolute;
+        bottom: 5%;
+        left: 5%;
+        max-width: 35%;
+        height: 30%;
+        width: auto;
+        color: black;
+    }
+    .text-info {
+        font-size: 1.5rem;
+    }
 
+    #text {
+        font-size: 1.75rem;
+        align-content: center;
+        text-align: center;
+    }
 }
 
 /* Stili per desktop */
