@@ -13,9 +13,9 @@
     justify-content: space-evenly;
 }
 
-#Mich-name {
-    position: relative;
-    font: bold 2rem "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
+#Mich-name, #Mich-name2{
+  position: relative;
+  font: bold 2rem "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
 }
 
 .Dashboard_Mich > * {
@@ -67,10 +67,19 @@
     text-align: justify;
 }
 
-#img {
+#img, #img2{
     max-height: 40vh;
     width: auto;
     padding: 5px;
     margin: 5px;
     border-radius: 50px 0 50px 0;
+}
+
+@media screen and (min-width: 770px) {
+    #img, #img2{
+        max-height: 30vh;
+        width: auto;
+        padding: 5px;
+    }
+
 }
