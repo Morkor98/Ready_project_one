@@ -4,6 +4,52 @@
     box-sizing: border-box;
 }
 
+/* container verticale, allineato al centro */
+.floating-nav {
+    position: fixed;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+}
+
+/* visibile quando aggiungiamo la classe */
+.floating-nav.visible {
+    opacity: 1;
+}
+
+/* stile base delle icone */
+.floating-nav .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #2d2d2d;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+
+/* hover quando non stiamo scrollando la pagina*/
+.floating-nav .nav-link:hover {
+    background: #3b82f6;
+}
+
+/* icona attiva */
+.floating-nav .nav-link.active {
+    background: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.5);
+}
+
+
 body {
     font-size: 13px;
     line-height: 1.38462;
