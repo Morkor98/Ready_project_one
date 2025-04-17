@@ -13,34 +13,37 @@
     justify-content: space-evenly;
 }
 
-#Mich-name{
-    font: bold 20px "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
+#Mich-name {
+    position: relative;
+    font: bold 2rem "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
 }
 
-.Dashboard_Mich>*{
+.Dashboard_Mich > * {
     margin: 0.5rem;
 }
 
-.Second-Line{
+.Second-Line {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin: 0 1.5rem;
 }
+
 .Image-container {
     cursor: pointer;
 }
+
 .Image-container > * {
     transition: opacity 0.5s ease;
 }
 
 .Placeholder {
-    position: absolute;
-    left: 20%;
-    top: 20%;
+    position: relative;
+    justify-content: center;
     font-size: 10rem;
     font-weight: bold;
     font-family: "Lobster", cursive;
+    padding: 3rem 4.5rem;
 }
 
 .hidden {
@@ -64,7 +67,7 @@
     text-align: justify;
 }
 
-.Cavallo-Pazzo{
+#img {
     max-height: 40vh;
     width: auto;
     padding: 5px;
