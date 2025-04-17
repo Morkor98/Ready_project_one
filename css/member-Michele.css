@@ -13,7 +13,7 @@
     justify-content: space-evenly;
 }
 
-#Mich-name{
+#Mich-name, #Mich-surname{
     font: bold 20px "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
 }
 
@@ -64,10 +64,19 @@
     text-align: justify;
 }
 
-.Cavallo-Pazzo{
+#img, #img2{
     max-height: 40vh;
     width: auto;
     padding: 5px;
     margin: 5px;
     border-radius: 50px 0 50px 0;
+}
+
+@media screen and (min-width: 770px) {
+    #img, #img2{
+        max-height: 30vh;
+        width: auto;
+        padding: 5px;
+    }
+
 }
