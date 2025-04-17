@@ -91,6 +91,27 @@ footer {
 }
 
 @media screen and (min-width: 770px) {
+
+    #top-body {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem;
+        justify-content: space-around;
+    }
+
+    #top-body>* {
+        padding: 1rem;
+    }
+
+    #top-body>p {
+        text-align: justify;
+    }
+
+    #kamigawa {
+        width: 50vw;
+        height: auto;
+    }
+
     #dashboardCarousel {
         display: none;
     }
