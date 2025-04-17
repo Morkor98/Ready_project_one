@@ -13,8 +13,8 @@
     justify-content: space-evenly;
 }
 
-#Mich-name, #Mich-surname{
-    font: bold 20px "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
+#Mich-name, #Mich-name2{
+    font: bold 2rem "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
 }
 
 .Dashboard_Mich>*{
