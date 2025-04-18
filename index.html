@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="dist/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -12,131 +13,388 @@
     <link media="screen" rel="stylesheet" href="css/member-Michele.css">
 </head>
 <header>
-    TITOLO
+    <header id="header">
+        <nav id="floatingNav" class="floating-nav">
+            <a href="#header"      data-target="header"    class="nav-link" title="Home"><i class="fas fa-home"></i></a>
+            <a href="#dashboard"   data-target="dashboard" class="nav-link" title="Dashboard"><i class="fas fa-th-large"></i></a>
+            <a href="#footer"      data-target="footer"    class="nav-link" title="Footer"><i class="fas fa-info-circle"></i></a>
+        </nav>
+    </header>
 </header>
+<script src="js/Header_floatingNav.js" defer></script>
 <body>
-<!-- Overlay per sfondo scuro dashboard Omar -->
-<div id="overlay" class="overlay hidden"></div>
-<p>
-    Abbiamo messo in comune idee, competenze e punti di vista diversi, cercando soluzioni che fossero concrete,
-    condivise e utili.
-    Il lavoro è stato un percorso fatto di confronto, collaborazione e sperimentazione, con l’obiettivo di arrivare a
-    qualcosa che fosse davvero significativo.
-    Abbiamo lavorato come gruppo per affrontare un approccio nuovo per il tipo di lavoro.
-    Ci siamo confrontati spesso, cercando di unire le nostre idee e trovare soluzioni insieme.
-    È stato un lavoro di squadra, in cui ognuno ha portato qualcosa e in cui abbiamo cercato di fare le cose nel modo
-    più chiaro e utile possibile.
-</p>
-<!-- Carousel per mobile -->
-<div id="dashboardCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="Dashboard_Frank">
-                <h2>Frank</h2>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="Dashboard_Omar">
-                <div class="card" onmouseover="toggleHover(true)" onmouseout="toggleHover(false)">
-                    <h2 id="h2">Omar</h2>
-                    <div class="hover-content">
-                        <img src="images/img_Omar.png" alt="img_Omar" class="image" />
-                        <div class="text-info">
-                            <p>23 anni</p>
-                            <p>Reggio Emilia</p>
-                            <p>24/06/2001</p>
+    <!-- Overlay per sfondo scuro dashboard Omar -->
+    <div id="overlay" class="overlay hidden"></div>
+    <p>
+        Abbiamo messo in comune idee, competenze e punti di vista diversi, cercando soluzioni che fossero concrete,
+        condivise e utili.
+        Il lavoro è stato un percorso fatto di confronto, collaborazione e sperimentazione, con l’obiettivo di arrivare a
+        qualcosa che fosse davvero significativo.
+        Abbiamo lavorato come gruppo per affrontare un approccio nuovo per il tipo di lavoro.
+        Ci siamo confrontati spesso, cercando di unire le nostre idee e trovare soluzioni insieme.
+        È stato un lavoro di squadra, in cui ognuno ha portato qualcosa e in cui abbiamo cercato di fare le cose nel modo
+        più chiaro e utile possibile.
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+    </p>
+    <section id="dashboard">
+        <!-- Carousel per mobile -->
+        <div id="dashboardCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="Dashboard_Frank">
+                        <h2>Frank</h2>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="Dashboard_Omar">
+                        <div class="card" onmouseover="toggleHover(true)" onmouseout="toggleHover(false)">
+                            <h2 id="h2">Omar</h2>
+                            <div class="hover-content">
+                                <img src="images/img_Omar.png" alt="img_Omar" class="image" />
+                                <div class="text-info">
+                                    <p>23 anni</p>
+                                    <p>Reggio Emilia</p>
+                                    <p>24/06/2001</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="text" class="dashboard-text hidden">
+                            <p>
+                                Ciao a tutti! Come letto dall'anteprima, mi chiamo Omar! Sono appassionato di tantissime cose, in particolare,
+                                dell'informatica ed lo sviluppo front-end mi ispira particolarmente.
+                                Mi piace perché mi permette di costruire cose concrete e visibili nell'immediato ed essendo anche fan di grafica/illustrazioni, le due cose si sposano particolarmente bene.
+                                Questo progetto mi ha dato modo di mettere alla prova competenze e creatività, creando un risultato che personalmente, mi ha soddisfatto molto.
+                                Spero che Linus Torvalds smetta di fare software.
+                            </p>
                         </div>
                     </div>
                 </div>
-                <div id="text" class="dashboard-text hidden">
-                    <p>
-                        Ciao a tutti! Come letto dall'anteprima, mi chiamo Omar! Sono appassionato di tantissime cose, in particolare,
-                        dell'informatica ed lo sviluppo front-end mi ispira particolarmente.
-                        Mi piace perché mi permette di costruire cose concrete e visibili nell'immediato ed essendo anche fan di grafica/illustrazioni, le due cose si sposano particolarmente bene.
-                        Questo progetto mi ha dato modo di mettere alla prova competenze e creatività, creando un risultato che personalmente, mi ha soddisfatto molto.
-                        Spero che Linus Torvalds smetta di fare software.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="Dashboard_Mich">
-                <h2 id="Mich-name">Mich</h2>
-                <div class="Second-Line">
-                    <div class="Image-container" id="imageToggle">
-                        <div class="Placeholder" id="Placeholder">?</div>
-                        <img class="hidden" id="img" src="images/Cavallo d'oro.jpg" alt="Cavallo d'oro">
+                <div class="carousel-item">
+                    <div class="Dashboard_Mich">
+                        <h2 id="Mich-name">Mich</h2>
+                        <div class="Second-Line">
+                            <div class="Image-container" id="imageToggle">
+                                <div class="Placeholder" id="Placeholder">?</div>
+                                <img class="hidden" id="img" src="images/Cavallo d'oro.jpg" alt="Cavallo d'oro">
+                            </div>
+                            <p class="Paragraph-Mich">Mi chiamo Michele, ho 27 anni e non sono un amante del front-end. Tutto
+                                sommato però questo ProjectWork non mi sta dispiacendo troppo. Sarà
+                                sicuramente merito dei miei compagni...
+                            </p>
+                        </div>
                     </div>
-                    <p class="Paragraph-Mich">Mi chiamo Michele, ho 27 anni e non sono un amante del front-end. Tutto
-                        sommato però questo ProjectWork non mi sta dispiacendo troppo. Sarà
-                        sicuramente merito dei miei compagni...</p>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#dashboardCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#dashboardCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- Grid per Desktop -->
+        <div id="dashboardGrid"><!--class="carousel slide" data-bs-ride="carousel"-->
+            <div class="grid-item" id="grd1">
+                <div class="Dashboard_Frank">
+                    <h2>Frank</h2>
+                </div>
+            </div>
+            <div class="grid-item" id="grd2">
+                <div class="Dashboard_Omar">
+                    <h2>Omar</h2>
+                </div>
+            </div>
+            <div class="grid-item" id="grd3">
+                <div class="Dashboard_Mich">
+                    <h2 id="Mich-name2">Mich</h2>
+                    <div class="Second-Line">
+                        <div class="Image-container" id="imageToggle2">
+                            <div class="Placeholder" id="Placeholder2">?</div>
+                            <img class="hidden" id="img2" src="images/Cavallo d'oro.jpg" alt="Cavallo d'oro">
+                        </div>
+                        <p class="Paragraph-Mich">Mi chiamo Michele, ho 27 anni e non sono un amante del front-end. Tutto
+                            sommato però questo ProjectWork non mi sta dispiacendo troppo. Sarà
+                            sicuramente merito dei miei compagni...
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#dashboardCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#dashboardCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-<!-- Grid per Desktop -->
-<div id="dashboardGrid"><!--class="carousel slide" data-bs-ride="carousel"-->
-    <div class="grid-item" id="grd1">
-        <div class="Dashboard_Frank">
-            <h2>Frank</h2>
-        </div>
-    </div>
-    <div class="grid-item" id="grd2">
-        <div class="Dashboard_Omar">
-            <h2>Omar</h2>
-        </div>
-    </div>
-    <div class="grid-item" id="grd3">
-        <div class="Dashboard_Mich">
-            <h2 id="Mich-name2">Mich</h2>
-            <div class="Second-Line">
-                <div class="Image-container" id="imageToggle2">
-                    <div class="Placeholder" id="Placeholder2">?</div>
-                    <img class="hidden" id="img2" src="images/Cavallo d'oro.jpg" alt="Cavallo d'oro">
-                </div>
-                <p class="Paragraph-Mich">Mi chiamo Michele, ho 27 anni e non sono un amante del front-end. Tutto
-                    sommato però questo ProjectWork non mi sta dispiacendo troppo. Sarà
-                    sicuramente merito dei miei compagni...</p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<p>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-    unchanged.
-    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-    recently with desktop publishing software
-    like Aldus PageMaker including versions of Lorem Ipsum.
-</p>
-<p>
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-    unchanged.
-    It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
-    recently with desktop publishing software
-    like Aldus PageMaker including versions of Lorem Ipsum.
-</p>
-<p>
-    Conclusioni...
-</p>
+    </section>
+    <p>
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        TANTISSIMO TESTO RIEMPITIVO GUARDA CHE BELLO
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+        unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+        recently with desktop publishing software
+        like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+        unchanged.
+        It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+        recently with desktop publishing software
+        like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+    <p>
+        Conclusioni...
+    </p>
 </body>
 <footer>
-    FOOTER
+    <footer id="footer">
+        FOOTER
+    </footer>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/member-JS-Michele.js"></script>

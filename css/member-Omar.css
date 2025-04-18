@@ -136,7 +136,7 @@ body.dashboard-opened #dashboardCarousel {
     .image {
         position: absolute;
         bottom: 5%;
-        left: 5%;
+        right: 5%;
         max-width: 30%;
         height: 25%;
         width: auto;
