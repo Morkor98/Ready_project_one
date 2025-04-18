@@ -1,17 +1,19 @@
 /* Stile della sezione Omar uguale per ogni media screen */
-.Dashboard_Omar{
+#Dashboard_Omar_carousel, #Dashboard_Omar_grid {
     background-color: darkgrey;
     color: #1C1C1E;
     border-radius: 20px;
     padding: 20px;
     text-align: center;
 }
-h2{
+
+#h2_Omar_carousel {
     position: absolute;
     align-items: center;
     justify-content: center;
 }
-.image {
+
+#image {
     position: absolute;
     display: block;
     max-width: 60%;
@@ -20,6 +22,7 @@ h2{
     float: left;
     color: black;
 }
+
 .text-info {
     flex-direction: column;
     justify-content: center;
@@ -27,20 +30,30 @@ h2{
     align-content: center;
     text-align: center;
 }
+
 .hidden {
     display: none;
 }
+
 .text-info > p {
-color: black;
+    color: black;
 }
+
 /*Nasconde l'immagine e i contenuti in rilievo al click della dashboard*/
-.Dashboard_Omar .card.hidden {
+#Dashboard_Omar_carousel .card.hidden {
     display: none;
     text-align: center;
 }
-.card.hovered h2 {
+
+#Dashboard_Omar_grid .card.hidden{
+    display: none;
+    text-align: center;
+}
+
+.card.hovered #h2_Omar_carousel {
     opacity: 0;
 }
+
 .card.hovered .hover-content {
     opacity: 1;
 }
@@ -60,9 +73,10 @@ color: black;
     cursor: pointer;
     overflow: hidden;
 }
+
 /*Dashboard aperta*/
 .dashboard-expanded {
-    margin:0 10vw;
+    margin: 0 10vw;
     width: 80vw;
     height: 80vh;
     z-index: 9999;
@@ -71,7 +85,7 @@ color: black;
 }
 
 body.dashboard-opened #dashboardCarousel {
-    pointer-events: none;   /* disabilita slide/clic finché aperta */
+    pointer-events: none; /* disabilita slide/clic finché aperta */
 }
 
 /*Overlay scuro dietro alla dashboard*/
@@ -89,13 +103,16 @@ body.dashboard-opened #dashboardCarousel {
     margin-top: 10px;
     font-size: 1rem;
 }
-.card.hovered h2 {
+
+.card.hovered #h2_Omar_carousel {
     opacity: 0;
 }
+
 .dashboard-text.hidden {
     opacity: 0;
     transition: opacity 0.3s ease;
 }
+
 /*Animazione per nascondere il testo dopo aver chiuso la dashboard*/
 #text {
     opacity: 1;
@@ -105,35 +122,41 @@ body.dashboard-opened #dashboardCarousel {
 #text.fade-out {
     opacity: 0;
 }
+
 .dashboard-expanded .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
 }
-.dashboard-expanded .content{
+
+.dashboard-expanded .content {
     width: 50%;
     height: auto;
     object-fit: cover;
 }
+
 .dashboard-expanded .content .text {
     width: 45%;
     font-size: 1.5rem;
     color: white;
 }
+
 /* Stili per mobile */
 @media (max-width: 767px) {
-    #h2{
+    #h2_Omar_carousel {
         position: absolute;
         top: 5%;
         transition: opacity 0.5s ease;
         opacity: 1;
     }
-    #h2.hidden {
+
+    #h2_Omar_carousel.hidden {
         opacity: 0;
         transition: opacity 0.5s ease;
     }
-    .image {
+
+    #image {
         position: absolute;
         bottom: 5%;
         right: 5%;
@@ -142,6 +165,7 @@ body.dashboard-opened #dashboardCarousel {
         width: auto;
         color: black;
     }
+
     .text-info {
         font-size: 1rem;
         align-content: center;
@@ -150,19 +174,21 @@ body.dashboard-opened #dashboardCarousel {
 
 }
 
-/* Stili per tablet */
+/* Stili per tablet FIXME dimensioni sbaglaite */
 @media (min-width: 768px) and (max-width: 1024px) {
-    #h2{
+    #h2_Omar_carousel {
         position: absolute;
         top: 5%;
         transition: opacity 0.5s ease;
         opacity: 1;
     }
-    #h2.hidden {
+
+    #h2_Omar_carousel.hidden {
         opacity: 0;
         transition: opacity 0.5s ease;
     }
-    .image {
+
+    #image {
         position: absolute;
         bottom: 5%;
         left: 5%;
@@ -171,6 +197,7 @@ body.dashboard-opened #dashboardCarousel {
         width: auto;
         color: black;
     }
+
     .text-info {
         font-size: 1.5rem;
     }
@@ -182,13 +209,14 @@ body.dashboard-opened #dashboardCarousel {
     }
 }
 
-/* Stili per desktop */
+/* Stili per desktop -- FIXME dimensioni sbaglaite */
 @media (min-width: 1025px) {
-    /* Mostra solo h2 inizialmente*/
-    .card h2 {
+    /* Mostra solo #h2_Omar_carousel inizialmente*/
+    .card #h2_Omar_carousel {
         transition: opacity 0.3s ease;
         opacity: 1;
     }
+
     /* Contenuto da mostrare in hover */
     .hover-content {
         display: grid;

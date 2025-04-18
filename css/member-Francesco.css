@@ -1,5 +1,5 @@
 /* Insert here the CSS for the section of the member "Francesco" */
-.Dashboard_Frank {
+#Dashboard_Frank_carousel, #Dashboard_Frank_grid {
     color: black;
     background-color: mediumpurple;
 }

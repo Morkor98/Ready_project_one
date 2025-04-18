@@ -75,7 +75,7 @@ footer {
     bottom: 0;
 }
 
-.Dashboard_Frank, .Dashboard_Omar, .Dashboard_Mich {
+.Dashboard_carousel_person {
     position: relative;
     width: 100vw; /*La singola dashboard occupa tutto lo spazio*/
     flex-shrink: 0;

@@ -1,9 +1,11 @@
 let currentExpanded = null;
-const dashboard = document.querySelector('.Dashboard_Omar');
+const dashboard = document.querySelector('#Dashboard_Omar_carousel');
 const overlay = document.getElementById('overlay');
 const card = document.querySelector('.card');
 const content = document.getElementById('text');
-const dashboardTitle = document.getElementById('h2');
+const dashboardTitle = document.getElementById('#h2_Omar_carousel');
+
+//TODO aggiungi id per grid e sistema funzioni
 
 // Aggiungi l'evento di click sulla dashboard per espanderla
 dashboard.addEventListener('click', function () {

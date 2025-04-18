@@ -5,7 +5,7 @@
     font-display: swap;
 }
 
-.Dashboard_Mich {
+ #Dashboard_Mich_carousel, #Dashboard_Mich_grid {
     color: #daa600;
     background-color: #73022e;
     display: flex;
@@ -15,10 +15,14 @@
 
 #Mich-name, #Mich-name2{
   position: relative;
+    text-align: center;
   font: bold 2rem "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
 }
 
-.Dashboard_Mich > * {
+ #Dashboard_Mich_carousel > * {
+    margin: 0.5rem;
+}
+#Dashboard_Mich_grid > *{
     margin: 0.5rem;
 }
 
@@ -38,7 +42,7 @@
 }
 
 .Placeholder {
-    position: relative;
+    position: absolute;
     justify-content: center;
     font-size: 10rem;
     font-weight: bold;
@@ -46,7 +50,7 @@
     padding: 3rem 4.5rem;
 }
 
-.hidden {
+.hidden-mich {
     opacity: 0;
     pointer-events: none;
 }
