@@ -35,7 +35,7 @@ function collapseDashboard() {
     if (text) text.classList.add('hidden');
 
     overlay.classList.add('hidden');
-    document.body.classList.remove('dashboard-opened');
+    document.body.classList.remove('dashboard-expanded');
 
     currentExpanded = null;
 }

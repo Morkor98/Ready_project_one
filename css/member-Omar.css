@@ -122,8 +122,8 @@
     z-index: 400;
 }
 
-/* Sfocatura del resto della pagina */
-body.dashboard-opened > *:not(#overlay):not(.dashboard-expanded):not(.card.expanded) {
+/* Sfocatura del resto della pagina FIXME blurrare SOLO lo sfondo*/
+body.dashboard-expanded > *:not(#overlay):not(.dashboard-expanded):not(.card.expanded) {
     filter: blur(3px);
     pointer-events: none;
 }
