@@ -60,9 +60,6 @@
     background-color: rgba(0, 0, 0, 0.85);
     z-index: 100;
 }
-.overlay:not(.hidden) {
-    display: block;
-}
 
 /* Hover content */
 .hover-content {
@@ -99,13 +96,13 @@
 }
 
 /* --------------------- EXPANSION --------------------- */
-.dashboard-expanded-container * {
+.dashboard-expanded * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-.dashboard-expanded-container {
+.dashboard-expanded{
     position: relative;
     z-index: 200;
     width: 100%;
@@ -126,7 +123,7 @@
 }
 
 /* Sfocatura del resto della pagina */
-body.dashboard-opened > *:not(#overlay):not(.dashboard-expanded-container):not(.card.expanded) {
+body.dashboard-opened > *:not(#overlay):not(.dashboard-expanded):not(.card.expanded) {
     filter: blur(3px);
     pointer-events: none;
 }
@@ -269,5 +266,8 @@ body.dashboard-opened > *:not(#overlay):not(.dashboard-expanded-container):not(.
         max-width: 60%;
         height: auto;
         z-index: 4;
+    }
+    .disappear{
+        display: none;
     }
 }

@@ -1,24 +1,23 @@
 let currentExpanded = null;
-let originalParent = null;
 const overlay = document.getElementById('overlay');
-
-// Funzione che espande la dashboard/card
+const textGrid = document.getElementById('cardText_Omar');
+// Funzione che espande la card
+/*FIXME esistono due currentExpanded, fixare il css*/
 function expandDashboard(original) {
     if (currentExpanded) return;
     const card = original.querySelector('.card');
     const title = original.querySelector('h2');
     const text = original.querySelector('.dashboard-text');
     if (card) {
+        textGrid.classList.remove('disappear');
         card.classList.add('expanded');
     }
     if (title) title.classList.add('hidden');
     if (text) text.classList.remove('hidden');
     overlay.classList.remove('hidden');
-    document.body.classList.add('dashboard-opened');
+    document.body.classList.add('dashboard-expanded');
     currentExpanded = original;
 }
-
-
 // Funzione per chiudere l'espansione della dashboard
 function collapseDashboard() {
     if (!currentExpanded) return;
@@ -27,7 +26,11 @@ function collapseDashboard() {
     const title = currentExpanded.querySelector('h2');
     const text = currentExpanded.querySelector('.dashboard-text');
 
-    if (card) card.classList.remove('expanded');
+    if (card) {
+        card.classList.remove('expanded');
+        textGrid.classList.add('disappear');
+    }
+
     if (title) title.classList.remove('hidden');
     if (text) text.classList.add('hidden');
 
@@ -36,8 +39,6 @@ function collapseDashboard() {
 
     currentExpanded = null;
 }
-
-
 // Aggiunge il comportamento di espansione al click su entrambi i layout
 ['Dashboard_Omar_carousel', 'Dashboard_Omar_grid'].forEach(id => {
     const element = document.getElementById(id);
@@ -48,3 +49,11 @@ function collapseDashboard() {
 
 // Aggiunge evento al click sull’overlay per chiudere la dashboard
 overlay.addEventListener('click', collapseDashboard);
+
+// Funzione per gestire il comportamento di hover
+function toggleHover(element, isHovered) {
+    const hoverContent = element.querySelector('.hover-content');
+    if (hoverContent) {
+        hoverContent.style.opacity = isHovered ? '1' : '0'; // Mostra o nasconde il contenuto al passaggio del mouse
+    }
+}
