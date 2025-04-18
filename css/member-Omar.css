@@ -22,9 +22,49 @@
     cursor: pointer;
     overflow: hidden;
     transition: all 0.4s ease;
-    z-index: 5;
+    z-index: 200;
 }
 
+/* Card espansa: 80% dello schermo */
+.card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 80vh;
+    background-color: darkgrey;
+    border-radius: 20px;
+    padding: 2rem;
+    z-index: 300;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    transition: all 0.4s ease;
+}
+
+.card.expanded h2,
+.card.expanded .hover-content {
+    z-index: 400;
+}
+
+/* Overlay */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+}
+.overlay:not(.hidden) {
+    display: block;
+}
+
+/* Hover content */
 .hover-content {
     display: grid;
     gap: 10px;
@@ -35,7 +75,6 @@
     opacity: 0;
     transition: opacity 0.3s ease;
     text-align: center;
-    z-index: 7;
 }
 
 .text-info > p {
@@ -58,65 +97,39 @@
     opacity: 0;
     pointer-events: none;
 }
+
 /* --------------------- EXPANSION --------------------- */
-/* Forza il reset di tutte le proprietà */
 .dashboard-expanded-container * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-.dashboard-expanded-container { /*FIXME --> fa cagare porcodio*/
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 80vh;
-    background-color: darkgrey;
-    border-radius: 20px;
-    padding: 2rem;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+
+.dashboard-expanded-container {
+    position: relative;
+    z-index: 200;
+    width: 100%;
+    max-width: 100%;
+    min-height: 400px;
+    background-color: #eee;
+    border-radius: 16px;
     transition: all 0.3s ease;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
 }
 
 .dashboard-text {
     text-align: center;
     font-size: 1.2rem;
     color: black;
-    z-index: 20;
     transition: opacity 0.3s ease;
+    z-index: 400;
 }
 
-/* Overlay */
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 999;
-}
-.overlay:not(.hidden) {
-    display: block;
-}
-
-/*
-    Quando il <body> ha la classe dashboard-opened:
-    Tutti i suoi figli diretti verranno sfocati e non interagibili, tranne:
-        L'elemento con id="overlay".
-        Gli elementi con classe dashboard-expanded-container.
-*/
-body.dashboard-opened > *:not(#overlay):not(.dashboard-expanded-container) {
+/* Sfocatura del resto della pagina */
+body.dashboard-opened > *:not(#overlay):not(.dashboard-expanded-container):not(.card.expanded) {
     filter: blur(3px);
     pointer-events: none;
 }
-
 
 /* --------------------- MEDIA QUERY --------------------- */
 
@@ -133,13 +146,13 @@ body.dashboard-opened > *:not(#overlay):not(.dashboard-expanded-container) {
     }
 
     .card:hover {
-        transform: translateY(-5px); /* Effetto hover */
+        transform: translateY(-5px);
     }
 
     .card-img {
         width: 100%;
-        height: 180px;          /* Altezza fissa per mobile */
-        object-fit: cover;      /* Adatta l'immagine senza distorsioni */
+        height: 180px;
+        object-fit: cover;
     }
 
     .card-content {
@@ -171,28 +184,27 @@ body.dashboard-opened > *:not(#overlay):not(.dashboard-expanded-container) {
         background: #0056b3;
     }
 
-
     #Dashboard_Omar_carousel {
         display: flex;
     }
+
     #Dashboard_Omar_grid {
         display: none;
     }
+
     #image_carousel {
-        max-width: 40%;
+        max-width: 60%;
+        height: auto;
+        z-index: 4;
     }
+
     .text-info {
         font-size: 1rem;
         justify-content: center;
     }
+
     #text_carousel {
         font-size: 1.25rem;
-    }
-    /* Immagini */
-    #image_carousel{
-        max-width: 60%;
-        height: auto;
-        z-index: 4;
     }
 }
 
@@ -200,53 +212,59 @@ body.dashboard-opened > *:not(#overlay):not(.dashboard-expanded-container) {
     #Dashboard_Omar_carousel {
         display: none;
     }
+
     #Dashboard_Omar_grid {
         display: flex;
     }
-    #image_grid {
-        max-width: 40%;
-    }
-    .text-info {
-        font-size: 1.25rem;
-    }
-    #text_grid {
-        font-size: 1.5rem;
-    }
-    /* Immagini */
+
     #image_grid {
         max-width: 60%;
         height: auto;
         z-index: 4;
     }
+
+    .text-info {
+        font-size: 1.25rem;
+    }
+
+    #text_grid {
+        font-size: 1.5rem;
+    }
 }
 
-/*DESKTOP*/
 @media (min-width: 769px) {
     #Dashboard_Omar_carousel {
         display: none;
     }
+
     #Dashboard_Omar_grid {
         display: flex;
     }
+
     .card {
-        max-width: 800px;      /* Card ancora più larga */
+        max-width: 800px;
     }
+
     .card-img {
-        height: 250px;        /* Altezza fissa più grande */
+        height: 250px;
     }
+
     .card-title {
         font-size: 1.8rem;
     }
+
     .card-text {
         font-size: 1.1rem;
     }
+
     .card:hover #h2_Omar_grid {
         opacity: 0;
     }
+
     .card:hover .hover-content {
         opacity: 1;
     }
-    /* Immagini */
+
     #image_grid {
         max-width: 60%;
         height: auto;

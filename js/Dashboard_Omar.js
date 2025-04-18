@@ -1,36 +1,44 @@
 let currentExpanded = null;
+let originalParent = null;
 const overlay = document.getElementById('overlay');
 
+// Funzione che espande la dashboard/card
 function expandDashboard(original) {
     if (currentExpanded) return;
-    const clone = original.cloneNode(true);
-    clone.classList.add('dashboard-expanded-container');
-    const card = clone.querySelector('.card');
-    const title = clone.querySelector('h2');
-    const text = clone.querySelector('.dashboard-text');
-    if (card) card.classList.add('hidden');
+    const card = original.querySelector('.card');
+    const title = original.querySelector('h2');
+    const text = original.querySelector('.dashboard-text');
+    if (card) {
+        card.classList.add('expanded');
+    }
     if (title) title.classList.add('hidden');
     if (text) text.classList.remove('hidden');
-    document.body.appendChild(clone);
     overlay.classList.remove('hidden');
     document.body.classList.add('dashboard-opened');
-    currentExpanded = clone;
+    currentExpanded = original;
 }
 
+
+// Funzione per chiudere l'espansione della dashboard
 function collapseDashboard() {
     if (!currentExpanded) return;
 
-    currentExpanded.classList.add('fade-out');
-    setTimeout(() => {
-        if (currentExpanded && currentExpanded.parentNode) {
-            currentExpanded.parentNode.removeChild(currentExpanded);
-        }
-        overlay.classList.add('hidden');
-        document.body.classList.remove('dashboard-opened');
-        currentExpanded = null;
-    }, 300);
+    const card = currentExpanded.querySelector('.card');
+    const title = currentExpanded.querySelector('h2');
+    const text = currentExpanded.querySelector('.dashboard-text');
+
+    if (card) card.classList.remove('expanded');
+    if (title) title.classList.remove('hidden');
+    if (text) text.classList.add('hidden');
+
+    overlay.classList.add('hidden');
+    document.body.classList.remove('dashboard-opened');
+
+    currentExpanded = null;
 }
 
+
+// Aggiunge il comportamento di espansione al click su entrambi i layout
 ['Dashboard_Omar_carousel', 'Dashboard_Omar_grid'].forEach(id => {
     const element = document.getElementById(id);
     if (element) {
@@ -38,4 +46,5 @@ function collapseDashboard() {
     }
 });
 
+// Aggiunge evento al click sull’overlay per chiudere la dashboard
 overlay.addEventListener('click', collapseDashboard);
