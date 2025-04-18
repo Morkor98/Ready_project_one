@@ -1,78 +1,41 @@
 let currentExpanded = null;
 const overlay = document.getElementById('overlay');
 
-// Applica il click handler alle dashboard
-function handleDashboardClick(dashboardElement) {
-    dashboardElement.addEventListener('click', function () {
-        if (!currentExpanded) {
-            this.classList.add('dashboard-expanded');
-            overlay.classList.remove('hidden');
-            document.body.classList.add('dashboard-opened'); // aggiunge la classe al body
-            currentExpanded = this;
-
-            const card = this.querySelector('.card');
-            const text = this.querySelector('.dashboard-text');
-            const title = this.querySelector('.dashboard-title');
-
-            if (card) {
-                card.classList.add('hidden');
-                card.classList.remove('hovered'); // forza la fine dell’hover
-            }
-            if (text) text.classList.remove('hidden');
-            if (title) title.classList.add('hidden');
-        } else {
-            closeExpanded();
-        }
-    });
+function expandDashboard(original) {
+    if (currentExpanded) return;
+    const clone = original.cloneNode(true);
+    clone.classList.add('dashboard-expanded-container');
+    const card = clone.querySelector('.card');
+    const title = clone.querySelector('h2');
+    const text = clone.querySelector('.dashboard-text');
+    if (card) card.classList.add('hidden');
+    if (title) title.classList.add('hidden');
+    if (text) text.classList.remove('hidden');
+    document.body.appendChild(clone);
+    overlay.classList.remove('hidden');
+    document.body.classList.add('dashboard-opened');
+    currentExpanded = clone;
 }
 
-// Seleziona tutte le dashboard singolarmente (carousel e grid separati)
-const dashboards = [
-    document.getElementById('Dashboard_Omar_carousel'),
-    document.getElementById('Dashboard_Omar_grid')
-];
+function collapseDashboard() {
+    if (!currentExpanded) return;
 
-dashboards.forEach(dashboard => {
-    if (dashboard) handleDashboardClick(dashboard);
+    currentExpanded.classList.add('fade-out');
+    setTimeout(() => {
+        if (currentExpanded && currentExpanded.parentNode) {
+            currentExpanded.parentNode.removeChild(currentExpanded);
+        }
+        overlay.classList.add('hidden');
+        document.body.classList.remove('dashboard-opened');
+        currentExpanded = null;
+    }, 300);
+}
+
+['Dashboard_Omar_carousel', 'Dashboard_Omar_grid'].forEach(id => {
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener('click', () => expandDashboard(element));
+    }
 });
 
-// Overlay per chiusura
-overlay.addEventListener('click', closeExpanded);
-
-// Chiusura con transizione
-function closeExpanded() {
-    if (currentExpanded) {
-        const card = currentExpanded.querySelector('.card');
-        const text = currentExpanded.querySelector('.dashboard-text');
-        const title = currentExpanded.querySelector('.dashboard-title');
-
-        if (text) {
-            text.classList.add('fade-out');
-            setTimeout(() => {
-                currentExpanded.classList.remove('dashboard-expanded');
-                overlay.classList.add('hidden');
-                document.body.classList.remove('dashboard-opened'); // rimuove la classe dal body
-                if (card) {
-                    card.classList.remove('hidden');
-                    card.classList.remove('hovered'); // resetta l’hover
-                }
-                if (text) {
-                    text.classList.add('hidden');
-                    text.classList.remove('fade-out');
-                }
-                if (title) title.classList.remove('hidden');
-                currentExpanded = null;
-            }, 300);
-        }
-    }
-}
-
-// Hover (passa "this" dalla card)
-function toggleHover(cardEl, isHovered) {
-    if (currentExpanded) return;
-    if (isHovered) {
-        cardEl.classList.add('hovered');
-    } else {
-        cardEl.classList.remove('hovered');
-    }
-}
+overlay.addEventListener('click', collapseDashboard);

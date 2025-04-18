@@ -112,7 +112,8 @@ footer {
         grid-column: 3 /4;
     }
 
-    .Dashboard_Frank, .Dashboard_Omar, .Dashboard_Mich {
+    .Dashboard_grid_person {
         width: 100%;
+        height: 100%;
     }
 }
