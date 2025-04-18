@@ -12,7 +12,6 @@
     <link media="screen" rel="stylesheet" href="css/member-Francesco.css">
     <link media="screen" rel="stylesheet" href="css/member-Michele.css">
 </head>
-<header>
     <header id="header">
         <nav id="floatingNav" class="floating-nav">
             <a href="#header"      data-target="header"    class="nav-link" title="Home"><i class="fas fa-home"></i></a>
@@ -20,7 +19,6 @@
             <a href="#footer"      data-target="footer"    class="nav-link" title="Footer"><i class="fas fa-info-circle"></i></a>
         </nav>
     </header>
-</header>
 <script src="js/Header_floatingNav.js" defer></script>
 <body>
     <!-- Overlay per sfondo scuro dashboard Omar -->
@@ -148,10 +146,12 @@
                 </div>
                 <div class="carousel-item">
                     <div class="Dashboard_carousel_person" id="Dashboard_Omar_carousel">
-                        <div class="card" onmouseover="toggleHover(true)" onmouseout="toggleHover(false)">
-                            <h2 id="h2_Omar_carousel">Omar</h2>
+                        <div class="card"
+                             onmouseover="toggleHover(this, true)"
+                             onmouseout="toggleHover(this, false)">
+                        <h2 id="h2_Omar_carousel">Omar</h2>
                             <div class="hover-content">
-                                <img src="images/img_Omar.png" alt="img_Omar" id="image" />
+                                <img src="images/img_Omar.png" alt="img_Omar" id="image_carousel" />
                                 <div class="text-info">
                                     <p>23 anni</p>
                                     <p>Reggio Emilia</p>
@@ -159,7 +159,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="text" class="dashboard-text hidden">
+                        <div id="text_carousel" class="dashboard-text hidden">
                             <p>
                                 Ciao a tutti! Come letto dall'anteprima, mi chiamo Omar! Sono appassionato di tantissime cose, in particolare,
                                 dell'informatica ed lo sviluppo front-end mi ispira particolarmente.
@@ -204,8 +204,31 @@
             </div>
             <div class="grid-item" id="grd2">
                 <div class="Dashboard_grid_person" id="Dashboard_Omar_grid">
-                    <h2>Omar</h2>
+                    <div class="card"
+                         onmouseover="toggleHover(this, true)"
+                         onmouseout="toggleHover(this, false)">
+
+                    <h2 id="h2_Omar_grid">Omar</h2>
+                        <div class="hover-content">
+                            <img src="images/img_Omar.png" alt="img_Omar" id="image_grid" />
+                            <div class="text-info">
+                                <p>23 anni</p>
+                                <p>Reggio Emilia</p>
+                                <p>24/06/2001</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="text_grid" class="dashboard-text hidden">
+                        <p>
+                            Ciao a tutti! Come letto dall'anteprima, mi chiamo Omar! Sono appassionato di tantissime cose, in particolare,
+                            dell'informatica ed lo sviluppo front-end mi ispira particolarmente.
+                            Mi piace perché mi permette di costruire cose concrete e visibili nell'immediato ed essendo anche fan di grafica/illustrazioni, le due cose si sposano particolarmente bene.
+                            Questo progetto mi ha dato modo di mettere alla prova competenze e creatività, creando un risultato che personalmente, mi ha soddisfatto molto.
+                            Spero che Linus Torvalds smetta di fare software.
+                        </p>
+                    </div>
                 </div>
+
             </div>
             <div class="grid-item" id="grd3">
                 <div class="Dashboard_grid_person" id="Dashboard_Mich_grid">

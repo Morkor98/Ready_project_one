@@ -2,9 +2,9 @@
 #Dashboard_Omar_carousel, #Dashboard_Omar_grid {
     background-color: darkgrey;
     color: #1C1C1E;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 #h2_Omar_carousel {
@@ -13,7 +13,7 @@
     justify-content: center;
 }
 
-#image {
+#image_carousel, #image_grid {
     position: absolute;
     display: block;
     max-width: 60%;
@@ -62,9 +62,7 @@
     border-radius: 20px;
     background-color: darkgrey;
     position: relative;
-    width: 100vw;
     flex-shrink: 0;
-    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,8 +70,8 @@
     font-weight: bold;
     cursor: pointer;
     overflow: hidden;
+    flex-direction: column;
 }
-
 /*Dashboard aperta*/
 .dashboard-expanded {
     margin: 0 10vw;
@@ -86,6 +84,10 @@
 
 body.dashboard-opened #dashboardCarousel {
     pointer-events: none; /* disabilita slide/clic finché aperta */
+}
+body.dashboard-opened #dashboardGrid {
+    pointer-events: none;
+    filter: blur(2px);
 }
 
 /*Overlay scuro dietro alla dashboard*/
@@ -114,12 +116,12 @@ body.dashboard-opened #dashboardCarousel {
 }
 
 /*Animazione per nascondere il testo dopo aver chiuso la dashboard*/
-#text {
+#text_carousel, #text_grid {
     opacity: 1;
     transition: opacity 0.3s ease;
 }
 
-#text.fade-out {
+#text_carousel, #text_grid.fade-out {
     opacity: 0;
 }
 
@@ -143,7 +145,10 @@ body.dashboard-opened #dashboardCarousel {
 }
 
 /* Stili per mobile */
-@media (max-width: 767px) {
+@media (max-width: 425px) {
+    #Dashboard_Omar_grid {
+        display: none;
+    }
     #h2_Omar_carousel {
         position: absolute;
         top: 5%;
@@ -156,7 +161,7 @@ body.dashboard-opened #dashboardCarousel {
         transition: opacity 0.5s ease;
     }
 
-    #image {
+    #image_carousel, #image_grid {
         position: absolute;
         bottom: 5%;
         right: 5%;
@@ -173,22 +178,23 @@ body.dashboard-opened #dashboardCarousel {
     }
 
 }
-
-/* Stili per tablet FIXME dimensioni sbaglaite */
-@media (min-width: 768px) and (max-width: 1024px) {
-    #h2_Omar_carousel {
+@media (min-width: 426px) and (max-width: 768px) {
+    #Dashboard_Omar_carousel {
+        display: none;
+    }
+    #h2_Omar_grid {
         position: absolute;
         top: 5%;
         transition: opacity 0.5s ease;
         opacity: 1;
     }
 
-    #h2_Omar_carousel.hidden {
+    #h2_Omar_grid.hidden {
         opacity: 0;
         transition: opacity 0.5s ease;
     }
 
-    #image {
+    #image_grid {
         position: absolute;
         bottom: 5%;
         left: 5%;
@@ -202,17 +208,18 @@ body.dashboard-opened #dashboardCarousel {
         font-size: 1.5rem;
     }
 
-    #text {
+    #text_grid {
         font-size: 1.75rem;
         align-content: center;
         text-align: center;
     }
 }
 
-/* Stili per desktop -- FIXME dimensioni sbaglaite */
-@media (min-width: 1025px) {
-    /* Mostra solo #h2_Omar_carousel inizialmente*/
-    .card #h2_Omar_carousel {
+@media (min-width: 770px) {
+    #Dashboard_Omar_carousel {
+        display: none;
+    }
+    .card #h2_Omar_grid {
         transition: opacity 0.3s ease;
         opacity: 1;
     }

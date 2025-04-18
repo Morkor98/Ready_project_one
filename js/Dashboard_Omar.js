@@ -1,59 +1,78 @@
 let currentExpanded = null;
-const dashboard = document.querySelector('#Dashboard_Omar_carousel');
 const overlay = document.getElementById('overlay');
-const card = document.querySelector('.card');
-const content = document.getElementById('text');
-const dashboardTitle = document.getElementById('#h2_Omar_carousel');
 
-//TODO aggiungi id per grid e sistema funzioni
+// Applica il click handler alle dashboard
+function handleDashboardClick(dashboardElement) {
+    dashboardElement.addEventListener('click', function () {
+        if (!currentExpanded) {
+            this.classList.add('dashboard-expanded');
+            overlay.classList.remove('hidden');
+            document.body.classList.add('dashboard-opened'); // aggiunge la classe al body
+            currentExpanded = this;
 
-// Aggiungi l'evento di click sulla dashboard per espanderla
-dashboard.addEventListener('click', function () {
-    if (!currentExpanded) {
-        // Espandi la dashboard
-        this.classList.add('dashboard-expanded');
-        overlay.classList.remove('hidden');
-        currentExpanded = this;
-        card.classList.add('hidden');
-        content.classList.remove('hidden');
-        dashboardTitle.classList.add('hidden');
-    } else {
-        // Se la dashboard è già espansa, chiudi la dashboard
-        closeExpanded();
-    }
+            const card = this.querySelector('.card');
+            const text = this.querySelector('.dashboard-text');
+            const title = this.querySelector('.dashboard-title');
+
+            if (card) {
+                card.classList.add('hidden');
+                card.classList.remove('hovered'); // forza la fine dell’hover
+            }
+            if (text) text.classList.remove('hidden');
+            if (title) title.classList.add('hidden');
+        } else {
+            closeExpanded();
+        }
+    });
+}
+
+// Seleziona tutte le dashboard singolarmente (carousel e grid separati)
+const dashboards = [
+    document.getElementById('Dashboard_Omar_carousel'),
+    document.getElementById('Dashboard_Omar_grid')
+];
+
+dashboards.forEach(dashboard => {
+    if (dashboard) handleDashboardClick(dashboard);
 });
 
-// Aggiungi l'evento di click sull'overlay per chiudere la dashboard
-overlay.addEventListener('click', function () {
-    closeExpanded();
-});
+// Overlay per chiusura
+overlay.addEventListener('click', closeExpanded);
 
-// Funzione per chiudere la dashboard
+// Chiusura con transizione
 function closeExpanded() {
     if (currentExpanded) {
-        // Avvia il fade-out del testo
-        content.classList.add('fade-out');
+        const card = currentExpanded.querySelector('.card');
+        const text = currentExpanded.querySelector('.dashboard-text');
+        const title = currentExpanded.querySelector('.dashboard-title');
 
-        // Aspetta che finisca la transizione, poi chiudi la dashboard
-        setTimeout(() => {
-            currentExpanded.classList.remove('dashboard-expanded');
-            overlay.classList.add('hidden');
-            currentExpanded = null;
-            card.classList.remove('hidden');
-            content.classList.add('hidden');
-            content.classList.remove('fade-out'); // Reset per la prossima apertura
-            dashboardTitle.classList.remove('hidden');
-        }, 300); // tempo uguale alla durata della transizione in CSS
+        if (text) {
+            text.classList.add('fade-out');
+            setTimeout(() => {
+                currentExpanded.classList.remove('dashboard-expanded');
+                overlay.classList.add('hidden');
+                document.body.classList.remove('dashboard-opened'); // rimuove la classe dal body
+                if (card) {
+                    card.classList.remove('hidden');
+                    card.classList.remove('hovered'); // resetta l’hover
+                }
+                if (text) {
+                    text.classList.add('hidden');
+                    text.classList.remove('fade-out');
+                }
+                if (title) title.classList.remove('hidden');
+                currentExpanded = null;
+            }, 300);
+        }
     }
 }
 
-// Funzione per gestire l'hover sul card
-function toggleHover(isHovered) {
-    if (currentExpanded) return; // Se la dashboard è aperta, non applicare l'effetto hover
+// Hover (passa "this" dalla card)
+function toggleHover(cardEl, isHovered) {
+    if (currentExpanded) return;
     if (isHovered) {
-        card.classList.add('hovered');
+        cardEl.classList.add('hovered');
     } else {
-        card.classList.remove('hovered');
+        cardEl.classList.remove('hovered');
     }
 }
-
