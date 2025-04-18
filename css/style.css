@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Pixelify Sans';
+    src: url('../fonts/PixelifySans-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -64,11 +70,36 @@ body > p {
     margin: 1rem;
 }
 
-header, footer {
+footer {
     background: #333;
     color: white;
     text-align: center;
     padding: 15px;
+}
+header {
+    position: relative;
+    text-align: center;
+}
+header img{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    opacity: 60%;
+    z-index: 50;
+}
+header h1 {
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9vw;
+    font-weight: bold;
+    text-shadow: 0 0 10px blue;
+    font-family: "Pixelify Sans", cursive;
+    color: white;
 }
 
 footer {
