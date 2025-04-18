@@ -64,7 +64,7 @@ body > p {
     margin: 1rem;
 }
 
-header, footer {
+header {
     background: #333;
     color: white;
     text-align: center;
@@ -73,6 +73,7 @@ header, footer {
 
 footer {
     bottom: 0;
+    background: #343a40;
 }
 
 .Dashboard_carousel_person {
@@ -88,6 +89,26 @@ footer {
 }
 #dashboardGrid {
     display: none;
+}
+
+body.dark-mode {
+    background-color: #343a40;
+    color: #888;
+}
+
+
+.theme-button {
+    /*position: fixed;*/
+    /*top: 20px;*/
+    /*right: 20px;*/
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.theme-button:hover {
+    transform: scale(1.2);
 }
 
 @media screen and (min-width: 770px) {
