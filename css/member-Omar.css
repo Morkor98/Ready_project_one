@@ -1,273 +1,104 @@
-/* --------------------- BASE --------------------- */
+/* File css/member-Omar.css - Versione ottimizzata */
 
-#Dashboard_Omar_carousel, #Dashboard_Omar_grid {
-    background-color: darkgrey;
-    color: #1C1C1E;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Stile base per la card Omar */
+#Dashboard_Omar_grid .card {
     position: relative;
-    overflow: hidden;
-}
-
-.card {
-    background-color: darkgrey;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
-    font-weight: bold;
-    cursor: pointer;
     overflow: hidden;
-    transition: all 0.4s ease;
-    z-index: 200;
 }
 
-/* Card espansa: 80% dello schermo */
-.card.expanded {
+#Dashboard_Omar_grid .card h2 {
+    transition: all 0.3s ease;
+    position: absolute;
+    margin: 0;
+}
+
+#Dashboard_Omar_grid .hover-content {
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding: 20px; /* Aggiunto per migliore spaziatura */
+    box-sizing: border-box; /* Include padding nelle dimensioni */
+}
+
+#Dashboard_Omar_grid .card:hover h2 {
+    opacity: 0;
+}
+
+#Dashboard_Omar_grid .card:hover .hover-content {
+    opacity: 1;
+}
+
+#Dashboard_Omar_grid img {
+    width: 150px; /* Cambiato da max-width a width per dimensione fissa */
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover; /* Assicura che l'immagine mantenga le proporzioni */
+}
+
+#Dashboard_Omar_grid .text-info {
+    text-align: center;
+    width: 100%; /* Assicura che non ecceda la card */
+}
+
+/* Stile per la dashboard espansa - Modifiche minime */
+#Dashboard_Omar_grid.expanded {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80vw;
-    height: 80vh;
-    background-color: darkgrey;
-    border-radius: 20px;
-    padding: 2rem;
-    z-index: 300;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: min(90%, 800px); /* Limita la larghezza massima */
+    height: auto;
+    max-height: 80vh;
+    z-index: 1001;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     overflow-y: auto;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
-    transition: all 0.4s ease;
 }
 
-.card.expanded h2,
-.card.expanded .hover-content {
-    z-index: 400;
+#Dashboard_Omar_grid.expanded .card {
+    display: none; /* Nasconde completamente la card quando espanso */
 }
 
-/* Overlay */
+#Dashboard_Omar_grid.expanded #text_grid {
+    display: block;
+    width: 100%;
+    margin-top: 0; /* Rimosso margine superiore non necessario */
+    padding: 10px;
+}
+
+/* Overlay - Nessuna modifica necessaria */
 .overlay {
-    display: none;
     position: fixed;
-    top: 0; left: 0;
-    width: 100vw; height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 100;
-}
-
-/* Hover content */
-.hover-content {
-    display: grid;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: none;
 }
 
-.text-info > p {
-    font-size: 1rem;
-    color: black;
+.overlay.visible {
+    display: block;
 }
 
-/* Titoli */
-#h2_Omar_carousel, #h2_Omar_grid {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    transition: opacity 0.5s ease;
-    font-size: 2rem;
-    z-index: 6;
-}
-
-.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-/* --------------------- EXPANSION --------------------- */
-.dashboard-expanded * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.dashboard-expanded{
-    position: relative;
-    z-index: 200;
-    width: 100%;
-    max-width: 100%;
-    min-height: 400px;
-    background-color: #eee;
-    border-radius: 16px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 25px rgba(0,0,0,0.3);
-}
-
-.dashboard-text {
-    text-align: center;
-    font-size: 1.2rem;
-    color: black;
-    transition: opacity 0.3s ease;
-    z-index: 400;
-}
-
-/* Sfocatura del resto della pagina FIXME blurrare SOLO lo sfondo*/
-body.dashboard-expanded > *:not(#overlay):not(.dashboard-expanded):not(.card.expanded) {
-    filter: blur(3px);
-    pointer-events: none;
-}
-
-/* --------------------- MEDIA QUERY --------------------- */
-
-@media (max-width: 425px) {
-    .card {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        background: #fff;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-5px);
-    }
-
-    .card-img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-    }
-
-    .card-content {
-        padding: 1rem;
-    }
-
-    .card-title {
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .card-text {
-        font-size: 0.9rem;
-        color: #555;
-        margin-bottom: 1rem;
-    }
-
-    .card-button {
-        background: #007bff;
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s;
-    }
-
-    .card-button:hover {
-        background: #0056b3;
-    }
-
-    #Dashboard_Omar_carousel {
-        display: flex;
-    }
-
-    #Dashboard_Omar_grid {
-        display: none;
-    }
-
-    #image_carousel {
-        max-width: 60%;
-        height: auto;
-        z-index: 4;
-    }
-
-    .text-info {
-        font-size: 1rem;
-        justify-content: center;
-    }
-
-    #text_carousel {
-        font-size: 1.25rem;
-    }
-}
-
-@media (min-width: 426px) and (max-width: 768px) {
-    #Dashboard_Omar_carousel {
-        display: none;
-    }
-
-    #Dashboard_Omar_grid {
-        display: flex;
-    }
-
-    #image_grid {
-        max-width: 60%;
-        height: auto;
-        z-index: 4;
-    }
-
-    .text-info {
-        font-size: 1.25rem;
-    }
-
-    #text_grid {
-        font-size: 1.5rem;
-    }
-}
-
-@media (min-width: 769px) {
-    #Dashboard_Omar_carousel {
-        display: none;
-    }
-
-    #Dashboard_Omar_grid {
-        display: flex;
-    }
-
-    .card {
-        max-width: 800px;
-    }
-
-    .card-img {
-        height: 250px;
-    }
-
-    .card-title {
-        font-size: 1.8rem;
-    }
-
-    .card-text {
-        font-size: 1.1rem;
-    }
-
-    .card:hover #h2_Omar_grid {
-        opacity: 0;
-    }
-
-    .card:hover .hover-content {
-        opacity: 1;
-    }
-
-    #image_grid {
-        max-width: 60%;
-        height: auto;
-        z-index: 4;
-    }
-    .disappear{
-        display: none;
-    }
+/* Stato iniziale - Nessuna modifica */
+#text_grid {
+    display: none;
 }

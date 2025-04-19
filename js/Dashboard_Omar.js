@@ -1,59 +1,38 @@
-let currentExpanded = null;
-const overlay = document.getElementById('overlay');
-const textGrid = document.getElementById('cardText_Omar');
-// Funzione che espande la card
-/*FIXME esistono due currentExpanded, fixare il css*/
-function expandDashboard(original) {
-    if (currentExpanded) return;
-    const card = original.querySelector('.card');
-    const title = original.querySelector('h2');
-    const text = original.querySelector('.dashboard-text');
-    if (card) {
-        textGrid.classList.remove('disappear');
-        card.classList.add('expanded');
-    }
-    if (title) title.classList.add('hidden');
-    if (text) text.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-    document.body.classList.add('dashboard-expanded');
-    currentExpanded = original;
-}
-// Funzione per chiudere l'espansione della dashboard
-function collapseDashboard() {
-    if (!currentExpanded) return;
+// Modifica nel file js/Dashboard_Omar.js
 
-    const card = currentExpanded.querySelector('.card');
-    const title = currentExpanded.querySelector('h2');
-    const text = currentExpanded.querySelector('.dashboard-text');
+document.addEventListener('DOMContentLoaded', function() {
+    const omarCard = document.querySelector('#Dashboard_Omar_grid .card');
+    const omarDashboard = document.querySelector('#Dashboard_Omar_grid');
+    const overlay = document.getElementById('overlay');
+    const omarText = document.querySelector('#Dashboard_Omar_grid #text_grid');
+    let isExpanded = false;
 
-    if (card) {
-        card.classList.remove('expanded');
-        textGrid.classList.add('disappear');
-    }
+    // Rimuovi gli event listener per hover se non ti servono più
+    omarCard.addEventListener('click', function(e) {
+        e.stopPropagation();
 
-    if (title) title.classList.remove('hidden');
-    if (text) text.classList.add('hidden');
+        isExpanded = !isExpanded;
 
-    overlay.classList.add('hidden');
-    document.body.classList.remove('dashboard-expanded');
+        if (isExpanded) {
+            omarDashboard.classList.add('expanded');
+            overlay.classList.add('visible');
+            omarText.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        } else {
+            omarDashboard.classList.remove('expanded');
+            overlay.classList.remove('visible');
+            omarText.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
 
-    currentExpanded = null;
-}
-// Aggiunge il comportamento di espansione al click su entrambi i layout
-['Dashboard_Omar_carousel', 'Dashboard_Omar_grid'].forEach(id => {
-    const element = document.getElementById(id);
-    if (element) {
-        element.addEventListener('click', () => expandDashboard(element));
-    }
+    overlay.addEventListener('click', function() {
+        if (isExpanded) {
+            omarDashboard.classList.remove('expanded');
+            overlay.classList.remove('visible');
+            omarText.style.display = 'none';
+            document.body.style.overflow = '';
+            isExpanded = false;
+        }
+    });
 });
-
-// Aggiunge evento al click sull’overlay per chiudere la dashboard
-overlay.addEventListener('click', collapseDashboard);
-
-// Funzione per gestire il comportamento di hover
-function toggleHover(element, isHovered) {
-    const hoverContent = element.querySelector('.hover-content');
-    if (hoverContent) {
-        hoverContent.style.opacity = isHovered ? '1' : '0'; // Mostra o nasconde il contenuto al passaggio del mouse
-    }
-}
