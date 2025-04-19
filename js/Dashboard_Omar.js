@@ -1,5 +1,3 @@
-// Modifica nel file js/Dashboard_Omar.js
-
 document.addEventListener('DOMContentLoaded', function() {
     const omarCard = document.querySelector('#Dashboard_Omar_grid .card');
     const omarDashboard = document.querySelector('#Dashboard_Omar_grid');
