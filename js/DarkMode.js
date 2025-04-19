@@ -1,6 +1,6 @@
-const button = document.getElementById('toggle-theme');
-const dark_mode_test=document.body;
-const footer=document.getElementById('footer');
+const button = document.getElementById('Button');
+const dark_mode_test = document.body;
+const footer = document.getElementById('footer');
 const icon = button.querySelector('i');
 
 button.addEventListener('click', () => {
