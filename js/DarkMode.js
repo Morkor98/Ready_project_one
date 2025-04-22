@@ -1,4 +1,4 @@
-const button = document.getElementById('Button');
+const button = document.getElementById('toggle-theme');
 const dark_mode_test = document.body;
 const footer = document.getElementById('footer');
 const icon = button.querySelector('i');
