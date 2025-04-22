@@ -1,110 +1,45 @@
-/* File css/member-Omar.css - Versione aggiornata */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
 
-#Dashboard_Omar_grid .card {
+/* Stile base */
+#Dashboard_Omar_grid .card, #Dashboard_Omar_carousel .card {
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
     height: 100%;
+    width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     overflow: hidden;
     background-color: darkgrey;
     border-radius: 10px;
     font-family: 'Poppins', sans-serif;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
-#Dashboard_Omar_grid .card h2 {
-    transition: all 0.3s ease;
-    margin: 0;
-    z-index: 2;
-    font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
+#h2_Omar_carousel {
     font-size: 1.5rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-#Dashboard_Omar_grid .hover-content {
-    opacity: 0;
-    transition: all 0.3s ease;
-    position: absolute;
+    margin-bottom: 10px;
+    color: #ffffff;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
-
 .text-info > p {
     color: black;
     font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
-#Dashboard_Omar_grid .text-info {
-    position: absolute;
-    right: 20px;
-    bottom: 20px;
-    text-align: right;
-    background-color: darkgrey;
-    padding: 8px 12px;
-    border-radius: 5px;
-    z-index: 3;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-}
-
-/* MODIFICA PRINCIPALE: Rimozione completa del bordo */
-#Dashboard_Omar_grid img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
-    border: none; /* Rimuove completamente il bordo */
-    outline: none; /* Rimuove eventuali outline */
-    box-shadow: none; /* Rimuove eventuali ombre */
-}
-
-#Dashboard_Omar_grid .card:hover h2 {
-    opacity: 0;
-}
-
-#Dashboard_Omar_grid .card:hover .hover-content {
-    opacity: 1;
-}
-
-#Dashboard_Omar_grid.expanded {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: min(90%, 800px);
-    height: auto;
-    max-height: 80vh;
-    z-index: 1001;
-    background-color: darkgrey;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    overflow-y: auto;
-    font-family: 'Poppins', sans-serif;
-}
-
-#Dashboard_Omar_grid.expanded .card {
-    display: none;
-}
-
-#Dashboard_Omar_grid.expanded #text_grid {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    color: #333;
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
+#text_carousel {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 90%;
 }
 
 .overlay {
@@ -123,6 +58,269 @@
     display: block;
 }
 
-#text_grid {
-    display: none;
+/* Mobile (fino a 767px) */
+@media screen and (max-width: 767px) {
+    #Dashboard_Omar_carousel .card {
+        padding: 15px;
+        align-items: flex-start;
+    }
+
+    #h2_Omar_carousel {
+        order: 1;
+        color: black;
+        margin-bottom: 15px;
+        text-align: center;
+        padding-left: 10px;
+    }
+
+    .hover-content {
+        order: 2;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px;
+        margin-top: 10px;
+    }
+
+    #image_carousel {
+        align-items: center;
+        height: 25vh;
+        width: auto;
+        margin: 5px;
+        order: 1;
+    }
+
+    #Dashboard_Omar_carousel .text-info {
+        order: 2;
+        text-align: right;
+        padding-right: 10px;
+        flex: 1;
+    }
+
+    .text-info > p {
+        position: absolute;
+        bottom: 20%;
+        text-align: right;
+        font-size: 0.8rem;
+    }
+
+    #text_carousel {
+        display: none;
+    }
+
+    #Dashboard_Omar_carousel.expanded {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 90%;
+        max-height: 80vh;
+        z-index: 1001;
+        background-color: darkgrey;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+    }
+
+    #Dashboard_Omar_carousel.expanded #text_carousel {
+        display: block;
+        order: 3;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        color: #333;
+    }
+}
+
+/* Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #Dashboard_Omar_carousel .card {
+        padding: 15px;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    #h2_Omar_carousel {
+        order: 1;
+        color: black;
+        margin-bottom: 15px;
+        text-align: center;
+        padding-left: 0;
+        width: 100%;
+        font-size: 1.8rem;
+    }
+
+    .hover-content {
+        order: 2;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    #image_carousel {
+        height: auto;
+        max-height: 15vh;
+        width: auto;
+        max-width: 40vw;
+        margin: 0;
+        order: 1;
+        object-fit: contain;
+    }
+
+    #Dashboard_Omar_carousel .text-info {
+        order: 2;
+        text-align: right;
+        padding-right: 0;
+        flex: 1;
+    }
+
+    .text-info > p {
+        position: static;
+        bottom: auto;
+        text-align: right;
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+
+    #text_carousel {
+        display: none;
+    }
+
+    #Dashboard_Omar_carousel.expanded #image_carousel {
+        max-height: 25vh;
+        max-width: 60vw;
+        margin: 0 auto;
+    }
+
+    #Dashboard_Omar_carousel.expanded {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85vw;
+        max-height: 80vh;
+        z-index: 1001;
+        background-color: darkgrey;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+    }
+
+    #Dashboard_Omar_carousel.expanded #text_carousel {
+        display: block;
+        order: 3;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        color: #333;
+        font-size: 1rem;
+    }
+}
+
+/* Desktop (1025px+) */
+@media screen and (min-width: 1025px) {
+    #Dashboard_Omar_grid .card {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #Dashboard_Omar_grid .card h2 {
+        transition: all 0.3s ease;
+        margin: 0;
+        z-index: 2;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    #Dashboard_Omar_grid .hover-content {
+        opacity: 0;
+        transition: all 0.3s ease;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #Dashboard_Omar_grid .text-info {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        text-align: right;
+        background-color: darkgrey;
+        padding: 8px 12px;
+        border-radius: 5px;
+        z-index: 3;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #Dashboard_Omar_grid .text-info > p {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    #Dashboard_Omar_grid img {
+        width: auto;
+        height: 35vh;
+        object-fit: cover;
+        position: relative;
+        z-index: 1;
+        border: none;
+        outline: none;
+        box-shadow: none;
+    }
+
+    #Dashboard_Omar_grid .card:hover h2 {
+        opacity: 0;
+    }
+
+    #Dashboard_Omar_grid .card:hover .hover-content {
+        opacity: 1;
+    }
+
+    #Dashboard_Omar_grid.expanded {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: min(90%, 800px);
+        height: auto;
+        max-height: 80vh;
+        z-index: 1001;
+        background-color: darkgrey;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    #Dashboard_Omar_grid.expanded .card {
+        display: none;
+    }
+
+    #Dashboard_Omar_grid.expanded #text_grid {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        color: #333;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+    }
+
+    #text_grid {
+        display: none;
+    }
 }
