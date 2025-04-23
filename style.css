@@ -1,0 +1,40 @@
+/* Per mobile usiamo lo slider, per desktop invece usiamo grid*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 13px;
+    line-height: 1.38462;
+    font-weight: 400;
+    letter-spacing: -.005em;
+    font-family: "SF Pro Text","SF Pro Icons","Apple WebExp Icons Custom","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #1d1d1f;
+    font-style: normal;
+}
+body>p {
+    margin: 1rem;
+}
+header, footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer {
+    bottom: 0;
+}
+.Dashboard_Frank, .Dashboard_Omar, .Dashboard_Mich {
+    position: relative;
+    width: 100vw; /*La singola dashboard occupa tutto lo spazio*/
+    flex-shrink: 0;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
