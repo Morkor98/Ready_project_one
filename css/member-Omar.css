@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
 
-/* Stile base */
-#Dashboard_Omar_grid .card, #Dashboard_Omar_carousel .card {
+/* Stili base (Mobile First) */
+#Dashboard_Omar_grid .card,
+#Dashboard_Omar_carousel .card {
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -19,29 +20,35 @@
     box-sizing: border-box;
 }
 
-#h2_Omar_carousel {
+#h2_Omar_carousel,
+#h2_Omar_grid {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #ffffff;
+    color: black;
     width: 100%;
     text-align: center;
 }
+
 .text-info > p {
     color: black;
     font-weight: 600;
     font-size: 0.9rem;
-    margin: 0;
+    right: 0;
+    margin-right: 2%;
 }
 
-#text_carousel {
-    margin-top: 20px;
+#text_carousel,
+#text_grid {
     color: #ffffff;
-    font-size: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
     line-height: 1.5;
     text-align: center;
     max-width: 90%;
+    display: none;
 }
 
+/* Overlay per l'espansione */
 .overlay {
     position: fixed;
     top: 0;
@@ -58,7 +65,37 @@
     display: block;
 }
 
-/* Mobile (fino a 767px) */
+/* Stili per la versione espansa (comuni a tutti i dispositivi) */
+#Dashboard_Omar_carousel.expanded,
+#Dashboard_Omar_grid.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    background-color: darkgrey;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    max-height: 80vh;
+}
+
+#Dashboard_Omar_carousel.expanded #text_carousel {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    font-size: 0.85rem;
+}
+
+#Dashboard_Omar_carousel.expanded .card{
+    display: none;
+}
+
+/* Stili specifici per mobile (fino a 767px) */
 @media screen and (max-width: 767px) {
     #Dashboard_Omar_carousel .card {
         padding: 15px;
@@ -105,36 +142,12 @@
         font-size: 0.8rem;
     }
 
-    #text_carousel {
-        display: none;
-    }
-
     #Dashboard_Omar_carousel.expanded {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         width: 90%;
-        max-height: 80vh;
-        z-index: 1001;
-        background-color: darkgrey;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        overflow-y: auto;
-    }
-
-    #Dashboard_Omar_carousel.expanded #text_carousel {
-        display: block;
-        order: 3;
-        width: 100%;
-        margin-top: 20px;
-        padding: 10px;
-        color: #333;
     }
 }
 
-/* Tablet (768px - 1024px) */
+/* Stili per tablet (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
     #Dashboard_Omar_carousel .card {
         padding: 15px;
@@ -187,8 +200,8 @@
         margin-top: 10px;
     }
 
-    #text_carousel {
-        display: none;
+    #Dashboard_Omar_carousel.expanded {
+        width: 85vw;
     }
 
     #Dashboard_Omar_carousel.expanded #image_carousel {
@@ -197,34 +210,21 @@
         margin: 0 auto;
     }
 
-    #Dashboard_Omar_carousel.expanded {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 85vw;
-        max-height: 80vh;
-        z-index: 1001;
-        background-color: darkgrey;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        overflow-y: auto;
-    }
-
     #Dashboard_Omar_carousel.expanded #text_carousel {
-        display: block;
-        order: 3;
-        width: 100%;
-        margin-top: 20px;
-        padding: 10px;
-        color: #333;
         font-size: 1rem;
     }
 }
 
-/* Desktop (1025px+) */
-@media screen and (min-width: 1025px) {
+/* Stili per desktop (1025px+) */
+@media (min-width: 1025px) {
+    #dashboardCarousel {
+        display: none;
+    }
+
+    #dashboardGrid {
+        display: grid;
+    }
+
     #Dashboard_Omar_grid .card {
         flex-direction: row;
         justify-content: center;
@@ -276,7 +276,7 @@
         height: 35vh;
         object-fit: cover;
         position: relative;
-        z-index: 1;
+        z-index: 100;
         border: none;
         outline: none;
         box-shadow: none;
@@ -291,20 +291,8 @@
     }
 
     #Dashboard_Omar_grid.expanded {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         width: min(90%, 800px);
-        height: auto;
-        max-height: 80vh;
-        z-index: 1001;
-        background-color: darkgrey;
         padding: 30px;
-        border-radius: 10px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-        overflow-y: auto;
-        font-family: 'Poppins', sans-serif;
     }
 
     #Dashboard_Omar_grid.expanded .card {
@@ -314,13 +302,10 @@
     #Dashboard_Omar_grid.expanded #text_grid {
         display: block;
         width: 100%;
+        margin-top: 10px;
         padding: 10px;
         color: #333;
         font-family: 'Poppins', sans-serif;
         line-height: 1.6;
-    }
-
-    #text_grid {
-        display: none;
     }
 }
