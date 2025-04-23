@@ -1,59 +1,68 @@
-let currentExpanded = null;
-const dashboard = document.querySelector('#Dashboard_Omar_carousel');
-const overlay = document.getElementById('overlay');
-const card = document.querySelector('.card');
-const content = document.getElementById('text');
-const dashboardTitle = document.getElementById('#h2_Omar_carousel');
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementi desktop (grid)
+    const omarGridCard = document.querySelector('#Dashboard_Omar_grid .card');
+    const omarGridDashboard = document.querySelector('#Dashboard_Omar_grid');
+    const omarGridText = document.querySelector('#Dashboard_Omar_grid #text_grid');
 
-//TODO aggiungi id per grid e sistema funzioni
+    // Elementi mobile/tablet (carousel)
+    const omarCarouselCard = document.querySelector('#Dashboard_Omar_carousel .card');
+    const omarCarouselDashboard = document.querySelector('#Dashboard_Omar_carousel');
+    const omarCarouselText = document.querySelector('#Dashboard_Omar_carousel #text_carousel');
 
-// Aggiungi l'evento di click sulla dashboard per espanderla
-dashboard.addEventListener('click', function () {
-    if (!currentExpanded) {
-        // Espandi la dashboard
-        this.classList.add('dashboard-expanded');
-        overlay.classList.remove('hidden');
-        currentExpanded = this;
-        card.classList.add('hidden');
-        content.classList.remove('hidden');
-        dashboardTitle.classList.add('hidden');
-    } else {
-        // Se la dashboard è già espansa, chiudi la dashboard
-        closeExpanded();
+    // Elementi comuni
+    const overlay = document.getElementById('overlay');
+    let isExpanded = false;
+
+    // Funzione per gestire il click (comune a entrambe le dashboard)
+    function handleCardClick(dashboard, textElement) {
+        return function(e) {
+            e.stopPropagation();
+            isExpanded = !isExpanded;
+
+            if (isExpanded) {
+                dashboard.classList.add('expanded');
+                overlay.classList.add('visible');
+                if (textElement) textElement.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            } else {
+                dashboard.classList.remove('expanded');
+                overlay.classList.remove('visible');
+                if (textElement) textElement.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        };
     }
+
+    // Aggiungi listener alla card desktop (grid)
+    if (omarGridCard) {
+        omarGridCard.addEventListener('click', handleCardClick(omarGridDashboard, omarGridText));
+    }
+
+    // Aggiungi listener alla card mobile/tablet (carousel)
+    if (omarCarouselCard) {
+        omarCarouselCard.addEventListener('click', handleCardClick(omarCarouselDashboard, omarCarouselText));
+    }
+
+    // Listener per overlay (comune a entrambe)
+    overlay.addEventListener('click', function() {
+        if (isExpanded) {
+            // Chiudi entrambe le dashboard (solo quella attiva sarà effettivamente chiusa)
+            if (omarGridDashboard) omarGridDashboard.classList.remove('expanded');
+            if (omarCarouselDashboard) omarCarouselDashboard.classList.remove('expanded');
+
+            overlay.classList.remove('visible');
+
+            if (omarGridText) omarGridText.style.display = 'none';
+            if (omarCarouselText) omarCarouselText.style.display = 'none';
+
+            document.body.style.overflow = '';
+            isExpanded = false;
+        }
+    });
+
+    // Controlla quale dashboard è visibile all'avvio (opzionale)
+    function checkInitialDashboard() {
+        // Puoi implementare questa logica se vuoi gestire casi particolari
+    }
+    checkInitialDashboard();
 });
-
-// Aggiungi l'evento di click sull'overlay per chiudere la dashboard
-overlay.addEventListener('click', function () {
-    closeExpanded();
-});
-
-// Funzione per chiudere la dashboard
-function closeExpanded() {
-    if (currentExpanded) {
-        // Avvia il fade-out del testo
-        content.classList.add('fade-out');
-
-        // Aspetta che finisca la transizione, poi chiudi la dashboard
-        setTimeout(() => {
-            currentExpanded.classList.remove('dashboard-expanded');
-            overlay.classList.add('hidden');
-            currentExpanded = null;
-            card.classList.remove('hidden');
-            content.classList.add('hidden');
-            content.classList.remove('fade-out'); // Reset per la prossima apertura
-            dashboardTitle.classList.remove('hidden');
-        }, 300); // tempo uguale alla durata della transizione in CSS
-    }
-}
-
-// Funzione per gestire l'hover sul card
-function toggleHover(isHovered) {
-    if (currentExpanded) return; // Se la dashboard è aperta, non applicare l'effetto hover
-    if (isHovered) {
-        card.classList.add('hovered');
-    } else {
-        card.classList.remove('hovered');
-    }
-}
-
