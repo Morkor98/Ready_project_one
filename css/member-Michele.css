@@ -1,11 +1,11 @@
 /* Insert here the CSS for the section of the member "Michele" */
 @font-face {
     font-family: 'Lobster';
-    src: url('./fonts/Lobster-Regular.ttf') format('truetype');
+    src: url('../fonts/Lobster-Regular.ttf') format('truetype');
     font-display: swap;
 }
 
-.Dashboard_Mich {
+ #Dashboard_Mich_carousel, #Dashboard_Mich_grid {
     color: #daa600;
     background-color: #73022e;
     display: flex;
@@ -13,37 +13,44 @@
     justify-content: space-evenly;
 }
 
-#Mich-name{
-    font: bold 20px "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
+#Mich-name, #Mich-name2{
+  position: relative;
+    text-align: center;
+  font: bold 2rem "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
 }
 
-.Dashboard_Mich>*{
+ #Dashboard_Mich_carousel > * {
+    margin: 0.5rem;
+}
+#Dashboard_Mich_grid > *{
     margin: 0.5rem;
 }
 
-.Second-Line{
+.Second-Line {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin: 0 1.5rem;
 }
+
 .Image-container {
     cursor: pointer;
 }
+
 .Image-container > * {
     transition: opacity 0.5s ease;
 }
 
 .Placeholder {
     position: absolute;
-    left: 20%;
-    top: 20%;
+    justify-content: center;
     font-size: 10rem;
     font-weight: bold;
     font-family: "Lobster", cursive;
+    padding: 3rem 4.5rem;
 }
 
-.hidden {
+.hidden-mich {
     opacity: 0;
     pointer-events: none;
 }
@@ -64,10 +71,23 @@
     text-align: justify;
 }
 
-.Cavallo-Pazzo{
+#img, #img2{
     max-height: 40vh;
     width: auto;
     padding: 5px;
     margin: 5px;
     border-radius: 50px 0 50px 0;
+}
+
+@media screen and (min-width: 770px) {
+    #img, #img2{
+        max-height: 30vh;
+        width: auto;
+        padding: 5px;
+    }
+
+    .Placeholder {
+        font-size: 8rem;
+    }
+
 }
