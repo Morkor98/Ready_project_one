@@ -58,6 +58,14 @@ footer {
     width: 2vw;
     height: 2vw;
 }
+.darkModeButton :hover{
+    background: #c5d0f0;
+    border-radius: 50%;
+    transition: background 0.3s ease-in-out;
+
+
+
+}
 
 footer>p{
     margin: 5px;
