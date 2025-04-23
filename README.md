@@ -1,6 +1,6 @@
 Dashboard_Omar.js
 
-Il seguente file contenente lo script per interagire con la dashboard nel seguente modo:
+Il file contiene lo script per interagire con la dashboard nel seguente modo:
 
 Comportamento dettagliato:
 1. Click sulla card
