@@ -70,12 +70,14 @@ body > p {
     margin: 1rem;
 }
 
-footer {
+header {
+
     background: #333;
     color: white;
     text-align: center;
     padding: 15px;
 }
+
 header {
     position: relative;
     text-align: center;
@@ -106,7 +108,6 @@ header h1 {
 footer {
     bottom: 0;
 }
-
 .Dashboard_carousel_person {
     position: relative;
     width: 100vw; /*La singola dashboard occupa tutto lo spazio*/
@@ -121,6 +122,85 @@ footer {
 #dashboardGrid {
     display: none;
 }
+
+
+/*--------------------------------------FOOTER & DARK MODE------------------------------------------------------------------------*/
+/*cambio di colori quando si passa alla dark mode */
+body.dark-mode {
+    background-color: #343a40;
+    color: #888;
+}
+
+#footer.dark_mode {
+    background: #1c2124;
+}
+
+/*Impotazioni base del footer*/
+#footer {
+    bottom: 0;
+    background: #343a40;
+    /*color: #888;*/
+    color: whitesmoke;
+}
+
+/*contenuto centrale del footer e impostazioni icone*/
+#footer_container {
+    text-align: center;
+}
+
+.logo {
+    font-family: 'Common Pixel', sans-serif;
+    text-shadow: 2px 2px 4px black;
+}
+
+#footer .social a i:before {
+    position: relative;
+    z-index: 2;
+}
+
+#footer #footer_container .social a i {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 0 3px;
+    /*color: #bbb*/
+    color: whitesmoke;
+}
+
+.fa-brands {
+    font-size: 2rem;
+
+}
+
+.ringraziamenti {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+/*caratteristice bottone per la dark mode */
+.theme-button {
+    margin: 3px 2px 2px 15px;
+    /*color: #888;*/
+    color: whitesmoke;
+    font-size: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.theme-button:hover {
+    transform: scale(1.2);
+}
+
+.info-dark {
+    display: inline-block;
+    font-family: 'Common Pixel', sans-serif;
+    text-shadow: 2px 2px 4px black;
+}
+
 
 @media screen and (min-width: 770px) {
 
@@ -174,5 +254,15 @@ footer {
     }
     .disappear {
         display: none;
+    }
+}
+/*versione tablet*/
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    #Button {
+        font-size: 12px;
+    }
+
+    .fa-brands {
+        font-size: 1.6rem;
     }
 }
