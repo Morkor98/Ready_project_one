@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Pixelify Sans';
+    src: url('../fonts/PixelifySans-VariableFont_wght.ttf') format('truetype');
+    font-display: swap;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -65,10 +71,42 @@ body > p {
 }
 
 header {
+
     background: #333;
     color: white;
     text-align: center;
     padding: 15px;
+}
+
+header {
+    position: relative;
+    text-align: center;
+}
+
+header img{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    opacity: 80%;
+    z-index: 50;
+}
+header h1 {
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9vw;
+    font-weight: bold;
+    text-shadow: 0 0 10px blue;
+    font-family: "Pixelify Sans", cursive;
+    color: white;
+}
+
+footer {
+    bottom: 0;
 }
 .Dashboard_carousel_person {
     position: relative;
@@ -165,6 +203,27 @@ body.dark-mode {
 
 
 @media screen and (min-width: 770px) {
+
+    #top-body {
+        display: flex;
+        flex-direction: row;
+        margin: 1rem;
+        justify-content: space-around;
+    }
+
+    #top-body>* {
+        padding: 1rem;
+    }
+
+    #top-body>p {
+        text-align: justify;
+    }
+
+    #kamigawa {
+        width: 50vw;
+        height: auto;
+    }
+
     #dashboardCarousel {
         display: none;
     }
@@ -174,20 +233,27 @@ body.dark-mode {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    #grd1 {
-        grid-column: 1 /2;
-    }
+    /*#grd1 {*/
+    /*    grid-column: 1 /2;*/
+    /*}*/
 
-    #grd2 {
-        grid-column: 2 /3;
-    }
+    /*#grd2 {*/
+    /*    grid-column: 2 /3;*/
+    /*}*/
 
-    #grd3 {
-        grid-column: 3 /4;
-    }
+    /*#grd3 {*/
+    /*    grid-column: 3 /4;*/
+    /*}*/
 
-    .Dashboard_Frank, .Dashboard_Omar, .Dashboard_Mich {
+    .Dashboard_grid_person {
         width: 100%;
+        height: 100%;
+    }
+    .expanded {
+        grid-column: 1 /4;
+    }
+    .disappear {
+        display: none;
     }
 }
 /*versione tablet*/
