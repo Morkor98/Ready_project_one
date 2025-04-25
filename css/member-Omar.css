@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
 
-
 /* Stili base (Mobile First) */
 #Dashboard_Omar_carousel .card {
     position: relative;
@@ -373,7 +372,7 @@
         opacity: 1;
     }
 
-    /* Stili per la versione espansa - DESKTOP */
+    /* Stili per la versione espansa */
     #Dashboard_Omar_grid.expanded {
         position: fixed;
         top: 50%;
@@ -396,7 +395,7 @@
         display: none;
     }
 
-    #Dashboard_Omar_grid.expanded #text_grid {
+    #Dashboard_Omar_grid.expanded #cardText_Omar {
         display: block;
         width: 100%;
         margin-top: 20px;
@@ -405,7 +404,9 @@
         font-family: 'Poppins', sans-serif;
         line-height: 1.6;
         font-size: 1rem;
-        order: 2;
+        z-index: 1000;
+        text-align: center;
+
     }
 
     #Dashboard_Omar_grid.expanded #h2_Omar_grid {
@@ -414,11 +415,5 @@
         order: 1;
         margin-bottom: 20px;
         opacity: 1;
-    }
-
-    #Dashboard_Omar_grid.expanded img,
-    #Dashboard_Omar_grid.expanded .text-info,
-    #Dashboard_Omar_grid.expanded .hover-content {
-        display: none;
     }
 }

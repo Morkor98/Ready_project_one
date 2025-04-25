@@ -1,7 +1,7 @@
 /* Insert here the CSS for the section of the member "Francesco" */
 #Dashboard_Frank_carousel, #Dashboard_Frank_grid {
     color: black;
-    background-image: url("bkg-2.jpg");
+    background-image: url("../images/bkg-2.jpg");
     background-position: center center;
     background-size: cover;
     border-radius: 15px ;
@@ -45,14 +45,14 @@
 }
 
 .img1 {
-    background-image: url("avatar.png");
+    background-image: url("../images/avatar.png");
     opacity: 1;
     z-index: 1;
 }
 
 .img2 {
 
-    background-image: url('avatarocchiolino.png');
+    background-image: url('../images/avatarocchiolino.png');
     opacity: 0;
     z-index: 2;
 }
