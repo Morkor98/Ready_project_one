@@ -30,6 +30,9 @@ La funzione handleCardClick(dashboard, textElement) incapsula la logica di espan
 Lo script garantisce una navigazione coerente su dispositivi diversi, gestendo l'interazione in modo fluido e centralizzato. È progettato per essere semplice da integrare in pagine web con layout responsivi.
 
 
+
+
+
 Header_floatingNav.js
 
 Comportamento dettagliato:
