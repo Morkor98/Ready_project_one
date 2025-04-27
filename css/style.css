@@ -167,7 +167,7 @@ footer {
 
     .Dashboard_grid_person {
         width: 100%;
-        height: 100%;
+        height: 40vh;
     }
     .expanded {
         grid-column: 1 /4;
