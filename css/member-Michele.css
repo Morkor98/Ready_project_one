@@ -14,7 +14,7 @@
 }
 
 #Mich-name, #Mich-name2{
-  position: relative;
+  /*position: relative;*/
     text-align: center;
   font: bold 2rem "Lobster", "Pacifico", "Dancing Script", "Segoe Script", cursive;
 }
@@ -65,7 +65,7 @@
 }
 
 .Paragraph-Mich {
-    font: italic 13px "Georgia", "Times New Roman", "Garamond", serif;
+    font: italic 18px "Georgia", "Times New Roman", "Garamond", serif;
     padding: 5px;
     margin: 5px;
     text-align: justify;
@@ -77,6 +77,15 @@
     padding: 5px;
     margin: 5px;
     border-radius: 50px 0 50px 0;
+}
+.disappear {
+    visibility: hidden;
+}
+
+.absolute-name {
+    position: absolute;
+    text-align: center;
+    width: 33%;
 }
 
 @media screen and (min-width: 770px) {
