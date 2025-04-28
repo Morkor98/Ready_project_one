@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Elementi desktop (grid)
+    // Elementi grid
     const omarGridCard = document.querySelector('#Dashboard_Omar_grid .card');
     const omarGridDashboard = document.querySelector('#Dashboard_Omar_grid');
-    const omarGridText = document.querySelector('#Dashboard_Omar_grid #text_grid');
+    const omarGridText = document.querySelector('#Dashboard_Omar_grid #cardText_Omar');
 
-    // Elementi mobile/tablet (carousel)
+    // Elementi carousel
     const omarCarouselCard = document.querySelector('#Dashboard_Omar_carousel .card');
     const omarCarouselDashboard = document.querySelector('#Dashboard_Omar_carousel');
     const omarCarouselText = document.querySelector('#Dashboard_Omar_carousel #text_carousel');
@@ -13,12 +13,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('overlay');
     let isExpanded = false;
 
-    // Funzione per gestire il click (comune a entrambe le dashboard)
+    // Funzione per gestire il click
     function handleCardClick(dashboard, textElement) {
         return function(e) {
             e.stopPropagation();
             isExpanded = !isExpanded;
-
             if (isExpanded) {
                 dashboard.classList.add('expanded');
                 overlay.classList.add('visible');
@@ -33,36 +32,27 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // Aggiungi listener alla card desktop (grid)
+    //Listener alla card desktop (grid)
     if (omarGridCard) {
-        omarGridCard.addEventListener('click', handleCardClick(omarGridDashboard, omarGridText));
-    }
 
-    // Aggiungi listener alla card mobile/tablet (carousel)
+        omarGridCard.addEventListener('click', handleCardClick(omarGridDashboard, omarGridText));
+        omarGridText.classList.remove("disappear");
+    }
+    //Listener alla card mobile/tablet (carousel)
     if (omarCarouselCard) {
         omarCarouselCard.addEventListener('click', handleCardClick(omarCarouselDashboard, omarCarouselText));
     }
-
     // Listener per overlay (comune a entrambe)
     overlay.addEventListener('click', function() {
         if (isExpanded) {
             // Chiudi entrambe le dashboard (solo quella attiva sarà effettivamente chiusa)
             if (omarGridDashboard) omarGridDashboard.classList.remove('expanded');
             if (omarCarouselDashboard) omarCarouselDashboard.classList.remove('expanded');
-
             overlay.classList.remove('visible');
-
             if (omarGridText) omarGridText.style.display = 'none';
             if (omarCarouselText) omarCarouselText.style.display = 'none';
-
             document.body.style.overflow = '';
             isExpanded = false;
         }
     });
-
-    // Controlla quale dashboard è visibile all'avvio (opzionale)
-    function checkInitialDashboard() {
-        // Puoi implementare questa logica se vuoi gestire casi particolari
-    }
-    checkInitialDashboard();
 });

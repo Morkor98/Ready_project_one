@@ -3,11 +3,13 @@ const dark_mode_test = document.body;
 const footer = document.getElementById('footer');
 const icon = button.querySelector('i');
 const line=document.getElementById('separate-line');
+const lineMeme=document.getElementById('separate-lineMeme');
 
 button.addEventListener('click', () => {
     dark_mode_test.classList.toggle('dark-mode');
     footer.classList.toggle('dark_mode');
     line.classList.toggle('dark-mode');
+    lineMeme.classList.toggle('dark-mode');
 
     // Cambia l'icona da luna a sole
     if (dark_mode_test.classList.contains('dark-mode')) {

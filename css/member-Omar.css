@@ -314,9 +314,10 @@
         line-height: 1.5;
         text-align: center;
         max-width: 90%;
+    }
+    .hidden-omar {
         display: none;
     }
-
     #Dashboard_Omar_grid .hover-content {
         opacity: 0;
         transition: all 0.3s ease;
@@ -406,7 +407,6 @@
         font-size: 1rem;
         z-index: 1000;
         text-align: center;
-
     }
 
     #Dashboard_Omar_grid.expanded #h2_Omar_grid {

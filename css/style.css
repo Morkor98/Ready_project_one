@@ -55,7 +55,6 @@
     box-shadow: 0 0 0 3px rgba(59,130,246,0.5);
 }
 
-
 body {
     background-color: lightgrey;
     font-size: 15px;
@@ -74,15 +73,16 @@ body {
     padding-left: .25rem;
     margin-top: 5vh;
     margin-left: 10vh;
+    margin-bottom: 0;
 }
 
-#separate-line {
-    width: 90%;
+#separate-line, #separate-lineMeme{
+    width: 85%;
     height: 2px;
     background-color: black;
-    margin: 0 10vh 10vh 10vh;
+    margin: 0 10vw 10vh 10vw;
 }
-#separate-line.dark-mode {
+#separate-line.dark-mode, #separate-lineMeme.dark-mode {
   background-color: lightgrey;
 }
 footer {
@@ -118,6 +118,25 @@ header h1 {
     color: white;
 }
 
+.Frank_Meme{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 2rem 5vw;
+}
+.Frank_Meme p{
+    margin: 0 5vw;
+    text-align: center;
+    font: 1.4rem "Pixelify Sans";
+}
+.Frank_Meme img{
+    max-height: 100vh;
+    max-width: 800px;
+    width: 80vw;
+    justify-content: center;
+    margin: 0 5vw;
+}
 footer {
     bottom: 0;
 }
