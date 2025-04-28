@@ -33,7 +33,7 @@ Lo script garantisce una navigazione coerente su dispositivi diversi, gestendo l
 
 
 
-Header_floatingNav.js
+FloatingNav.js
 
 Comportamento dettagliato:
     1. Visualizzazione della barra di navigazione durante lo scroll
