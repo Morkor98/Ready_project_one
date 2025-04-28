@@ -5,6 +5,8 @@ const icon = button.querySelector('i');
 const line=document.getElementById('separate-line');
 const lineMeme=document.getElementById('separate-lineMeme');
 const pUnder=document.getElementById('paragraph_pre_footer');
+const memeStart=document.getElementById('meme_textStart');
+const memeEnd=document.getElementById('meme_textEnd');
 
 
 button.addEventListener('click', () => {
@@ -13,6 +15,8 @@ button.addEventListener('click', () => {
     line.classList.toggle('dark-mode');
     lineMeme.classList.toggle('dark-mode');
     pUnder.classList.toggle('dark-mode');
+    memeStart.classList.toggle('dark-mode');
+    memeEnd.classList.toggle('dark-mode');
 
     // Cambia l'icona da luna a sole
     if (dark_mode_test.classList.contains('dark-mode')) {

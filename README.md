@@ -36,7 +36,7 @@ Lo script garantisce una navigazione coerente su dispositivi diversi, gestendo l
 FloatingNav.js
 
 Comportamento dettagliato:
-    1. Visualizzazione della barra di navigazione durante lo scroll
+1. Visualizzazione della barra di navigazione durante lo scroll
     Quando l’utente effettua uno scroll verticale sulla pagina:
         Se la posizione non è né in cima né in fondo, viene aggiunta la classe visible all’elemento di navigazione (#floatingNav)
         In tutti gli altri casi, la classe visible viene rimossa
