@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
 
-                        // Dopo 5s termina l'effetto e fa partire memeTextEnd
+                        // Dopo 1.75s termina l'effetto e fa partire memeTextEnd
                         setTimeout(() => {
                             entry.target.style.animation = 'none';
                             entry.target.style.boxShadow = 'none';
@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
 
-                        // Ferma il lampeggio dopo 5s
+                        // Ferma il lampeggio dopo 1.5s
                         setTimeout(() => {
                             entry.target.style.animation = 'none';
                             entry.target.style.boxShadow = 'none';
                             entry.target.style.width = '35.5ch';
-                        }, 5000);
+                        }, 1500);
                     }, 500);
                 }
             }
@@ -58,6 +58,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Osserva solo il primo inizialmente
     observer.observe(memeTextStart);
-
-
 });

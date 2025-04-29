@@ -119,7 +119,7 @@ header h1 {
 .Frank_Meme{
     display: flex;
     justify-content: center;
-    height: 80vh;
+    height: 65vh;
     flex-direction: column;
     margin: 2rem 5vw;
 }
