@@ -26,14 +26,6 @@ grd1.addEventListener('click', (e) => {
     grd3.classList.add('disappear');
 });
 
-grd2.addEventListener('click', (e) => {
-    e.stopPropagation();
-    grd2.classList.add('expanded');
-    expandedItem = grd2;
-    grd1.classList.add('disappear');
-    grd3.classList.add('disappear');
-});
-
 grd3.addEventListener('click', (e) => {
     e.stopPropagation();
     grd3.classList.add('expanded');
