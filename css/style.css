@@ -165,7 +165,7 @@ header h1 {
     font: 1.4rem "Pixelify Sans";
 }
 .Frank_Meme img{
-    max-height: 100vh;
+    max-height: 55vh;
     max-width: 800px;
     width: 80vw;
     justify-content: center;
@@ -279,6 +279,7 @@ body.dark-mode {
     text-shadow: 2px 2px 4px black;
 }
 
+/*--------------------------------------DESKTOP VIEW------------------------------------------------------------------------*/
 
 @media screen and (min-width: 770px) {
 
@@ -332,5 +333,24 @@ body.dark-mode {
     }
     .disappear {
         display: none;
+    }
+
+    #separate-lineMeme {
+        margin-bottom: 0;
+    }
+
+    .Frank_Meme {
+        align-items: center;
+        height: 120vh;
+
+    }
+
+    #meme_textStart, #meme_textEnd {
+        font-size: 1.75rem;
+    }
+
+    .Frank_Meme img{
+        width: 66vw;
+        max-height: 99vh;
     }
 }
