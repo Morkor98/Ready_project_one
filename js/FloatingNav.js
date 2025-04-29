@@ -49,9 +49,6 @@ document.querySelectorAll('section[id]').forEach(section => {
 });
 // avvia observer su ogni sezione
 sections.forEach(sec => io.observe(sec));
-
-// ascolta lo scroll
 window.addEventListener('scroll', toggleNav);
-
 // init
 toggleNav();
