@@ -1,7 +1,19 @@
+member-JS-Michele.js
+
+Questo script permette di mostrare un'immagine al clic su un pulsante, nascondendo un elemento segnaposto. È utile per rivelare contenuti visivi in modo controllato e progressivo, migliorando l'interattività della pagina.
+    All'avvio vengono selezionati:
+        Due elementi (Placeholder e Placeholder2) che rappresentano immagini e contenuti nascosti inizialmente.
+        Due immagini (img e img2) da mostrare quando richiesto.
+        Due pulsanti (imageToggle e imageToggle2) che gestiscono ciascuna coppia di placeholder/immagine.
+    Al clic sul primo pulsante:
+        L'elemento Placeholder viene nascosto applicando la classe hidden-mich.
+        L'immagine img viene mostrata rimuovendo la stessa classe hidden-mich.
+    Al clic sul secondo pulsante:
+        Si ripete lo stesso processo per la seconda coppia (Placeholder2 e img2).
+
 Dashboard_Omar.js
 
 Il file contiene lo script per interagire con la dashboard nel seguente modo:
-
 Comportamento dettagliato:
 1. Click sulla card
     Quando l’utente clicca sulla card (sia desktop che mobile):
@@ -74,3 +86,31 @@ Lo script è progettato per:
         La visibilità della barra
         L’interazione al clic
         L’aggiornamento dinamico dello stato attivo dei link
+
+
+text-animation-meme.js
+    Comportamento dettagliato:
+    Questo script gestisce l'animazione di due testi con un effetto di digitazione simulata, come una macchina da scrivere, attivata quando i testi entrano nel campo visivo dell'utente (viewport).
+    All'avvio della pagina, lo script imposta entrambi i testi in uno stato iniziale invisibile: non sono ancora visibili, hanno larghezza zero e sono leggermente spostati verso il basso.
+    Viene utilizzato un IntersectionObserver, che rileva quando i testi entrano completamente nella schermata. Questo serve per far partire l’animazione solo quando i testi sono effettivamente visibili all’utente.
+    Il primo testo (memeTextStart) viene osservato per primo. Quando entra nella viewport:
+        Dopo un breve ritardo, inizia un’animazione che simula la scrittura lettera per lettera.
+        Durante l’animazione, appare anche un cursore lampeggiante.
+        Una volta completata la scrittura, l’animazione viene interrotta, il cursore rimosso e il testo viene mantenuto visibile.
+        Solo a questo punto, lo script comincia a osservare il secondo testo (memeTextEnd).
+        Il secondo testo (memeTextEnd) si comporta in modo analogo, ma inizia solo dopo che il primo ha completato l’animazione. Anche qui viene mostrata la digitazione simulata, seguita dalla rimozione del cursore            lampeggiante.
+
+DarkMode.js
+
+Questo script implementa un pulsante tra modalità chiara e scura per la pagina web. È utile per migliorare l’accessibilità e offrire all’utente la possibilità di scegliere il tema visivo preferito.
+    All'avvio, lo script seleziona tutti gli elementi coinvolti nel cambio di tema, tra cui:
+        Il pulsante che attiva lo switch.
+        Il corpo della pagina.
+        Alcuni elementi specifici come il footer, linee decorative e paragrafi.
+        Blocchi di testo animato (come quelli usati per l'effetto digitazione).
+        L’icona all’interno del pulsante (usata per mostrare il sole o la luna).
+    Al clic sul pulsante:
+        Viene alternata (toggle) la classe dark-mode su tutti gli elementi selezionati. Questo consente di applicare gli stili definiti per il tema scuro tramite CSS.
+        In parallelo, l’icona nel pulsante viene aggiornata dinamicamente:
+            Se si attiva la modalità scura, l’icona passa dalla luna al sole.
+            Se si torna alla modalità chiara, l’icona torna a essere la luna.
