@@ -18,25 +18,33 @@
 }
 #square
 {
-    opacity: 0;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+
+
+}
+.trat{
+    position: relative;
     display: flex;
-    flex-direction: column;
-    /*justify-content: center;*/
+    top: 20%;
+    left: 20%;
+    justify-content: center;
     text-align: center;
     align-items: center;
-    height: 80%;
+    height: 60%;
     width: 60%;
     background: #c5d0f0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     border-radius: 15px ;
-
 }
 
-.click{
-    opacity: 1;
-}
 
-#square:hover {
+
+.trat:hover {
    transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
 }
@@ -45,22 +53,32 @@
     width: 10%;
     height: 10%;
 }
-#square> p{
-    font-size: 1.2rem;
+.trat> p{
+    position: relative;
+    left:10px;
+    color: #2E3A59;
+    font-size: 1.1rem;
+    right: 10%;
+
     padding-top:1.25rem;
+    padding-right: 1.25rem;
 }
 .image-wrapper {
+    position: relative;
     display: grid;
-    width: 70%;
+    width: 32%;
     height: 90%;
 
 }
 
 .img {
-    margin-top:4%;
+    position: relative;
+    left:10px;
+
     grid-area: 1/1;
     width: 100%;
     height: 100%;
+    border-radius: 15px;
     background-size: cover;
     background-position: center;
     transition: opacity 0.5s ease-in-out;
