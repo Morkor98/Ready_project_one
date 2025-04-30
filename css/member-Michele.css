@@ -8,6 +8,7 @@
  #Dashboard_Mich_carousel, #Dashboard_Mich_grid {
     color: #daa600;
     background-color: #73022e;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
