@@ -80,6 +80,10 @@
     background-position: center;
     transition: opacity 0.5s ease-in-out;
 }
+.car{
+    height: 80%;
+    margin-top: 30%;
+}
 .desk {
     width: 13vw
 }
