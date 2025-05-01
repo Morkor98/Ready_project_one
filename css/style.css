@@ -73,18 +73,16 @@ body {
     padding-left: .25rem;
     margin-top: 5vh;
     margin-left: 10vh;
-    margin-bottom: 0;
+    margin-bottom: 5vh;
+    display: inline-block;       /* Adatta la larghezza al testo */
+    border-bottom: 2px solid black;
+    width: 60%;
+    z-index:1;
+}
+body.dark-mode .body-paragraph{
+    border-bottom: 2px solid grey;
 }
 
-#separate-line, #separate-lineMeme{
-    width: 85%;
-    height: 2px;
-    background-color: black;
-    margin: 0 10vw 10vh 10vw;
-}
-#separate-line.dark-mode, #separate-lineMeme.dark-mode {
-  background-color: lightgrey;
-}
 footer {
     background: #333;
     color: white;
@@ -138,7 +136,6 @@ header h1 {
 }
 #meme_textEnd{
     padding-top: 10px;
-    display: block;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
     width: 0;
@@ -254,7 +251,7 @@ body.dark-mode {
 
 .greetings {
     text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 /*caratteristice bottone per la dark mode */
@@ -297,6 +294,9 @@ body.dark-mode {
     #top-body>p {
         text-align: justify;
     }
+    .body-paragraph {
+        width: 80%;
+    }
 
     #kamigawa {
         width: 50vw;
@@ -312,18 +312,6 @@ body.dark-mode {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    /*#grd1 {*/
-    /*    grid-column: 1 /2;*/
-    /*}*/
-
-    /*#grd2 {*/
-    /*    grid-column: 2 /3;*/
-    /*}*/
-
-    /*#grd3 {*/
-    /*    grid-column: 3 /4;*/
-    /*}*/
-
     .Dashboard_grid_person {
         width: 100%;
         height: 40vh;
@@ -333,10 +321,6 @@ body.dark-mode {
     }
     .disappear {
         display: none;
-    }
-
-    #separate-lineMeme {
-        margin-bottom: 0;
     }
 
     .Frank_Meme {
