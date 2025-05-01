@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 if (entry.target === memeTextStart) {
+
                     // Avvia animazione su memeTextStart
                     setTimeout(() => {
                         entry.target.style.animation = 'write 1.75s steps(40, end) forwards, mark .5s step-end infinite';
@@ -37,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 500);
                 }
 
+                // Avvia animazione su memeTextEnd
                 if (entry.target === memeTextEnd) {
-                    // Avvia animazione su memeTextEnd
                     setTimeout(() => {
                         entry.target.style.animation = 'write 1.5s steps(30, end) forwards, mark .5s step-end infinite';
                         entry.target.style.opacity = '1';
@@ -55,7 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }, { threshold: 1 });
-
 // Osserva solo il primo inizialmente
     observer.observe(memeTextStart);
 });
