@@ -3,14 +3,11 @@
     src: url('../fonts/PixelifySans-VariableFont_wght.ttf') format('truetype');
     font-display: swap;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* container verticale, allineato al centro */
 .floating-nav {
     position: fixed;
     left: 1rem;
@@ -23,13 +20,9 @@
     transition: opacity 0.3s ease;
     z-index: 1000;
 }
-
-/* visibile quando aggiungiamo la classe */
 .floating-nav.visible {
     opacity: 1;
 }
-
-/* stile base delle icone */
 .floating-nav .nav-link {
     display: flex;
     align-items: center;
@@ -43,13 +36,9 @@
     font-size: 1.1rem;
     transition: background 0.2s;
 }
-
-/* hover quando non stiamo scrollando la pagina*/
 .floating-nav .nav-link:hover {
     background: #3b82f6;
 }
-
-/* icona attiva */
 .floating-nav .nav-link.active {
     background: #3b82f6;
     box-shadow: 0 0 0 3px rgba(59,130,246,0.5);
@@ -65,7 +54,6 @@ body {
     color: #1d1d1f;
     font-style: normal;
 }
-
 .body-paragraph {
     font-family: "Pixelify Sans";
     font-weight: bold;
@@ -74,7 +62,7 @@ body {
     margin-top: 5vh;
     margin-left: 10vh;
     margin-bottom: 5vh;
-    display: inline-block;       /* Adatta la larghezza al testo */
+    display: inline-block;
     border-bottom: 2px solid black;
     width: 60%;
     z-index:1;
@@ -82,7 +70,6 @@ body {
 body.dark-mode .body-paragraph{
     border-bottom: 2px solid grey;
 }
-
 footer {
     background: #333;
     color: white;
@@ -183,7 +170,7 @@ footer {
 
 .Dashboard_carousel_person {
     position: relative;
-    width: 100vw; /*La singola dashboard occupa tutto lo spazio*/
+    width: 100vw;
     flex-shrink: 0;
     height: 50vh;
     display: flex;
@@ -231,6 +218,7 @@ body.dark-mode {
 #footer .social a i:before {
     position: relative;
     z-index: 2;
+    font-size: 1.5rem;
 }
 
 #footer #footer_container .social a i {
@@ -246,12 +234,13 @@ body.dark-mode {
 
 .fa-brands {
     font-size: 2rem;
-
 }
 
-.greetings {
-    text-align: center;
-    margin-bottom: 0;
+#linkedText{
+    font-family: "Pixelify Sans", cursive;
+    color: white;
+    font-size: 1.75rem;
+    text-decoration: none;
 }
 
 /*caratteristice bottone per la dark mode */
@@ -275,7 +264,6 @@ body.dark-mode {
     font-family: 'Common Pixel', sans-serif;
     text-shadow: 2px 2px 4px black;
 }
-
 /*--------------------------------------DESKTOP VIEW------------------------------------------------------------------------*/
 
 @media screen and (min-width: 770px) {

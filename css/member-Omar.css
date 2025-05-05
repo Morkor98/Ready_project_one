@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Montserrat:wght@400;600;700&display=swap');
 
-/* Stili base (Mobile First) */
 #Dashboard_Omar_carousel .card {
     position: relative;
     cursor: pointer;
@@ -18,7 +17,6 @@
     padding: 15px;
     box-sizing: border-box;
 }
-
 #h2_Omar_carousel{
     position : absolute;
     font-size: 1.5rem;
@@ -30,7 +28,6 @@
     order: 1;
     padding-left: 10px;
 }
-
 .text-info > p {
     position: absolute;
     right: 2%;
@@ -40,7 +37,6 @@
     font-size: 0.9rem;
     margin-right: 2%;
 }
-
 #text_carousel{
     color: #ffffff;
     font-size: 1rem;
@@ -50,7 +46,6 @@
     max-width: 90%;
     display: none;
 }
-
 #image_carousel {
     position: absolute;
     top:25%;
@@ -61,7 +56,6 @@
     margin: 5px;
     order: 1;
 }
-
 #Dashboard_Omar_carousel .text-info {
     order: 2;
     text-align: right;
@@ -69,13 +63,9 @@
     padding-right: 10px;
     flex: 1;
 }
-
-
 #Dashboard_Omar_carousel.expanded {
     width: 90%;
 }
-
-/* Overlay per l'espansione */
 .overlay {
     position: fixed;
     top: 0;
@@ -87,12 +77,9 @@
     z-index: 1000;
     display: none;
 }
-
 .overlay.visible {
     display: block;
 }
-
-/* Stili per la versione espansa */
 #Dashboard_Omar_carousel.expanded{
     position: fixed;
     top: 50%;
@@ -106,7 +93,6 @@
     overflow-y: auto;
     max-height: 80vh;
 }
-
 #Dashboard_Omar_carousel.expanded #text_carousel {
     width: 100%;
     margin-top: 10px;
@@ -116,18 +102,14 @@
     line-height: 1.6;
     font-size: 0.85rem;
 }
-
 #Dashboard_Omar_carousel.expanded .card{
     display: none;
 }
-/* Stili per tablet */
+/*Tablet*/
 @media (min-width: 450px) and (max-width: 769px) {
-
     #Dashboard_Omar_carousel {
         display: block;
     }
-
-    /* Mantieni lo stile originale del carousel */
     #Dashboard_Omar_carousel .card {
         position: relative;
         cursor: pointer;
@@ -144,7 +126,6 @@
         padding: 15px;
         box-sizing: border-box;
     }
-
     #h2_Omar_carousel {
         order: 1;
         color: black;
@@ -154,7 +135,6 @@
         width: 100%;
         font-size: 1.8rem;
     }
-
     .hover-content {
         order: 2;
         display: flex;
@@ -164,7 +144,6 @@
         padding: 0;
         margin-top: 10px;
     }
-
     #image_carousel {
         position: absolute;
         top:30%;
@@ -178,7 +157,6 @@
         order: 1;
         justify-items: center;
     }
-
     #Dashboard_Omar_carousel .text-info {
         position: absolute;
         right: 5%;
@@ -188,7 +166,6 @@
         padding-right: 0;
         flex: 1;
     }
-
     .text-info > p {
         position: static;
         bottom: 0;
@@ -196,7 +173,6 @@
         font-size: 1rem;
         margin-top: 10px;
     }
-
     #text_carousel {
         display: none;
         color: #ffffff;
@@ -206,8 +182,6 @@
         text-align: center;
         max-width: 90%;
     }
-
-    /* Stili per la versione espansa */
     #Dashboard_Omar_carousel.expanded {
         position: fixed;
         top: 50%;
@@ -221,13 +195,11 @@
         width: 85vw;
         max-height: 80vh;
         overflow-y: auto;
-        display: block; /* Cambiato da flex a block */
+        display: block;
     }
-
     #Dashboard_Omar_carousel.expanded .card {
         display: none;
     }
-
     #Dashboard_Omar_carousel.expanded #text_carousel {
         display: block;
         width: 100%;
@@ -239,7 +211,6 @@
         font-size: 1rem;
         order: 3;
     }
-
     #Dashboard_Omar_carousel.expanded #h2_Omar_carousel {
         display: block;
         position: static;
@@ -247,7 +218,6 @@
         margin-bottom: 20px;
         text-align: center;
     }
-
     #Dashboard_Omar_carousel.expanded #image_carousel {
         display: block;
         max-height: 25vh;
@@ -255,18 +225,14 @@
         margin: 0 auto 20px;
         order: 2;
     }
-
     #Dashboard_Omar_carousel.expanded .text-info {
         display: none;
     }
-
-    /* Mantieni visibile il carousel quando non espanso */
     #Dashboard_Omar_carousel:not(.expanded) {
         display: block;
     }
 }
-
-/* Stili per desktop */
+/*Desktop */
 @media (min-width: 770px) {
     #dashboardCarousel {
         display: none;
@@ -306,7 +272,6 @@
         text-align: center;
         width: 100%;
     }
-
     #text_grid {
         color: #ffffff;
         font-size: 1rem;
@@ -330,7 +295,6 @@
         justify-content: center;
         font-family: 'Poppins', sans-serif;
     }
-
     #Dashboard_Omar_grid .text-info {
         position: absolute;
         right: 20px;
@@ -345,14 +309,12 @@
         white-space: normal;
         word-wrap: break-word;
     }
-
     #Dashboard_Omar_grid .text-info > p {
         font-size: 0.9rem;
         font-weight: 600;
         margin: 0;
         color: black;
     }
-
     #Dashboard_Omar_grid img {
         width: auto;
         height: 35vh;
@@ -364,16 +326,12 @@
         box-shadow: none;
         margin-bottom: 15px;
     }
-
     #Dashboard_Omar_grid .card:hover h2 {
         opacity: 0;
     }
-
     #Dashboard_Omar_grid .card:hover .hover-content {
         opacity: 1;
     }
-
-    /* Stili per la versione espansa */
     #Dashboard_Omar_grid.expanded {
         position: fixed;
         top: 50%;
@@ -391,11 +349,9 @@
         flex-direction: column;
         align-items: center;
     }
-
     #Dashboard_Omar_grid.expanded .card {
         display: none;
     }
-
     #Dashboard_Omar_grid.expanded #cardText_Omar {
         display: block;
         width: 100%;
@@ -408,7 +364,6 @@
         z-index: 1000;
         text-align: center;
     }
-
     #Dashboard_Omar_grid.expanded #h2_Omar_grid {
         display: block;
         position: static;
